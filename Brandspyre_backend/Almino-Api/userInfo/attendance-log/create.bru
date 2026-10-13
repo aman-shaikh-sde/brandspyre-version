@@ -1,0 +1,56 @@
+meta {
+  name: create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{local}}/api/users/attendance-log/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTc3NTc3NCwiZXhwIjoxNzUxODYyMTc0fQ.O3j-YUi8TL2FsCPlIyRpT5ur0nd_AZtH--sFE_LeYFc
+}
+
+body:json {
+  {
+    "staff_id": "BRCH_01/01",
+    "attendance_date": "2025-07-06",
+    "check_out": "2025-07-06"
+  }
+}
+
+docs {
+  ```javascript
+  👉 For Check-in:
+  {
+    "staff_id": "BRCH_01/01",
+    "attendance_date": "2025-07-06",
+    "check_in": "2025-07-06T09:00:00"
+  }
+  
+  👉 Check-in (with only date, system time used)
+  {
+    "staff_id": "BRCH_01/01",
+    "attendance_date": "2025-07-06",
+    "check_out": "2025-07-06"
+  }
+  
+  👉 For Check-out:
+  {
+    "staff_id": "BRCH_01/01",
+    "attendance_date": "2025-07-06",
+    "check_out": "2025-07-06T12:00:00"
+  }
+  
+  👉 Check-out (with only date, system time used)
+  {
+    "staff_id": "BRCH_01/01",
+    "attendance_date": "2025-07-06",
+    "check_out": "2025-07-06"
+  }
+  
+  ```
+}

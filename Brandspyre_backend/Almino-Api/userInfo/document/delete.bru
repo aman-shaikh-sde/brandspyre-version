@@ -1,0 +1,29 @@
+meta {
+  name: delete
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{local}}/api/users/document/delete/2
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJzdXBlcmFkbWluIiwiYnJjb2RlIjoiQlJDT0RFXzAxIiwiaWF0IjoxNzQ3OTIwMDM3LCJleHAiOjE3NDgwMDY0Mzd9.wna9m8ZtOXIqjrWZbeC1TSKzCICclFsB9XCK1UoTtxM
+}
+
+body:json {
+  {
+    "branchcode":"BRCH_02",
+    "notes":"BRCH_02BRCH_02BRCH_02BRCH_02"
+  }
+}
+
+docs {
+  {
+    "branchcode":"BRCH_02",
+    "notes":"BRCH_02BRCH_02BRCH_02BRCH_02"
+  }
+}

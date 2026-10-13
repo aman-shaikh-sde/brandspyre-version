@@ -1,0 +1,19 @@
+meta {
+  name: profile
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{local}}/api/teams/read/profile
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~team_id: BRCH_01/TEAM/02
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MDUxMzM4MCwiZXhwIjoxNzUwNTk5NzgwfQ.UGq71i4anSffTGd3ZWI1tQLdOb5V7WTPdCBCRZiWmC0
+}

@@ -1,0 +1,191 @@
+meta {
+  name: create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{local}}/api/doc_meet/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTk2Mjk2OSwiZXhwIjoxNzUyMDQ5MzY5fQ.4EgmvgevRQZyKy5RJpccOBEAkOk0yXmRhkecHyHf4ms
+}
+
+body:json {
+  {
+    "data": [
+    {
+      "branchcode": "BRCODE_01",
+      "title": "General Meeting",
+      "notes": "Project General",
+      "comm_type": "meeting",
+      "status": "active", 
+      "meet_link": "https://meet.google.com/yxx-ahim-nop",
+      "start_date_time": "2025-06-01T09:00:00+05:30",
+      "end_date_time": "2025-06-01T10:00:00+05:30",
+      "doc_status":"none",
+      "category": "custom",
+      "field": "custom",  
+      "custom": [          
+        { "target_id": "BRCODE_01/01", "type": "staff" }
+      ],
+      "communication_participants": [
+        {
+          "person_id": "BRCODE_01/01",
+          "role": "staff",
+          "isdocvisible": false
+        }
+      ]
+    }
+  ]
+  }
+}
+
+body:multipart-form {
+  branchcode: BRCODE_01
+  title: General Meeting
+  notes: Project
+  comm_type: doc
+  status: active
+  doc_status: archived
+  category: custom
+  field: custom
+  URL: @file(C:\Users\schai\Downloads\Gokul Developer Resume.pdf)
+  custom[target_id][0]: BRCODE_01/01
+  custom[type][0]: staff
+  communication_participants[person_id][0]: BRCODE_01/01
+  communication_participants[role][0]: staff
+  communication_participants[isdocvisible][0]: true
+}
+
+docs {
+  ```javascript
+  
+  [
+    {
+      "branchcode": "BR001",
+      "campaign_code": "CMP001",
+      "client_code": "CL001",
+      "project_code": "PRJ001",
+      "milestone_code": "MS001",
+      "task_id": 101,
+      "task_participants": 5,
+      "title": "Kickoff Meeting",
+      "notes": "Project kickoff for milestone 1",
+      "comm_type": "meeting",                or "doc" or "followup"
+      "status": "active",              "completed", "declined"
+      "doc_status": "archived",        or "verfied-closed", "rework"
+      "meet_link": "https://meet.google.com/example",
+      "start_date_time": "2025-07-01T09:00:00+05:30",
+      "end_date_time": "2025-07-01T10:00:00+05:30",
+      "category": "custom",          or "branch", "team", "all", etc.
+      "field": "project",            or "task", "lead", etc.
+      "doc": [                      (optional) existing documents
+        { "url": "docs/introduction.pdf", "type": "pdf" }
+      ],
+      "custom": [            // target audience if category is 'custom'
+        { "target_id": "STF101", "type": "team" },
+        { "target_id": "STF102", "type": "team" },
+        { "target_id": "TM001", "type": "branch" },
+        { "target_id": "TM001", "type": "branch" }
+      ],
+      "communication_participants": [
+        {
+          "person_id": "STF101",
+          "role": "staff",
+          "isdocvisible": true
+        },
+        {
+          "person_id": "CL201",
+          "role": "client",
+          "isdocvisible": false
+        }
+      ]
+    }
+  ]
+  
+  "comm_type":'followup', 'meeting', 'doc'
+  'active', 'completed', 'declined'
+  
+  
+  #addCustomTargets 
+  
+  {
+    "meet_id": 23,
+    "custom": [
+      { "target_id": "STF101", "type": "staff" },
+      { "target_id": "BR001", "type": "branch" }
+    ]
+  }
+  
+  #addParticipants
+  {
+    "meet_id": 101,
+    "participants": [
+      {
+        "person_id": "STF001",
+        "role": "staff",
+        "isdocvisible": true,
+      },
+      {
+        "person_id": "CL002",
+        "role": "client",
+        "isdocvisible": false
+      }
+    ]
+  }
+  
+  {
+    "data": [
+    {
+      "branchcode": "BRCODE_01",
+      "title": "General Meeting",
+      "notes": "Project General",
+      "comm_type": "meeting",
+      "status": "active", 
+      "meet_link": "https://meet.google.com/example",
+      "start_date_time": "2025-07-01T09:00:00+05:30",
+      "end_date_time": "2025-07-01T10:00:00+05:30",
+      "doc_status":"none",
+      "category": "custom",
+      "field": "custom",  
+      "custom": [          
+        { "target_id": "BRCODE_01/01", "type": "staff" }
+      ],
+      "communication_participants": [
+        {
+          "person_id": "BRCODE_01/01",
+          "role": "staff",
+          "isdocvisible": false
+        }
+      ]
+    }
+  ]
+  }
+  
+  
+  [{
+      "branchcode": "BRCODE_01",
+      "title": "Kickoff Meeting",
+      "notes": "Project kickoff for milestone 1",
+      "comm_type": "doc", 
+      "status": "active",
+      "doc_status": "archived",
+      "category": "custom",     
+      "field": "project",           
+      "custom": [ { "target_id": "BRCODE_01/01", "type": "staff" }    ],
+      "communication_participants": [
+        {
+          "person_id": "BRCODE_01/01",
+          "role": "staff",
+          "isdocvisible": true
+        }
+      ]
+    }
+  ]
+  
+  ```
+}

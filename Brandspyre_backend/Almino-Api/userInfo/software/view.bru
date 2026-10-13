@@ -1,0 +1,25 @@
+meta {
+  name: view
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/api/users/software/read
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~staff_id: BRCODE_01/02
+  ~branchcode: BRCH_02
+  ~page: 1
+  ~id: 2
+  ~role: admin
+  ~dec: dec
+  ~limit: 2
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTY0ODA1NiwiZXhwIjoxNzQ5NzM0NDU2fQ.1aXcSIpUVH5Q-tbZsZmbRXVu8qYeV2ytFGl19T72Irw
+}

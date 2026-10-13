@@ -1,0 +1,22 @@
+meta {
+  name: delete
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{local}}/api/master/software/delete/1
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTQ1ODEwMCwiZXhwIjoxNzQ5NTQ0NTAwfQ.tG-riThJanMRF_OQNihszlbGd93VuLhl6-s8iGSXYK4
+}
+
+docs {
+  {
+    "branchcode":"BRCH_02",
+    "notes":"BRCH_02BRCH_02BRCH_02BRCH_02"
+  }
+}

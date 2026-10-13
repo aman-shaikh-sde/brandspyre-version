@@ -1,0 +1,184 @@
+meta {
+  name: create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{local}}/api/users/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MDUwOTE2MCwiZXhwIjoxNzUwNTk1NTYwfQ.nqhyPei0QpwKYm1X3b2BF1xm_-AdjyyjTTB0fiCCKDM
+}
+
+body:json {
+  {
+    "profile":[
+      {  
+            "branchcode":"BRCH_01",
+            "role":"employee",
+            "firstname":"suraj",
+            "lastname":"kumar",
+            "dob":"1998-05-15",
+            "gender":"Male",
+            "marital":"single",
+            "bloodgroup":"AB+ve",
+            "phonenumber":"123456",
+            "alternumber":"654321",
+            "email":"suraj@gmail.com",
+            "password":"12341234",
+            "permanentaddress":"35B",
+            "presentaddress":"35B",
+            "department":"architecture",
+            "designation":"principal",
+            "pannumber":"147258369",
+            "aadharnumber":"123456789",
+            "profileurl":"",
+            "dateofjoining":"2025-06-21",
+            "relivingdate":"",
+            "status":"active",
+            "notes":""
+          },
+      {  
+            "branchcode":"BRCH_01",
+            "role":"employee",
+            "firstname":"raj",
+            "lastname":"kumar",
+            "dob":"1998-05-15",
+            "gender":"Male",
+            "marital":"single",
+            "bloodgroup":"AB+ve",
+            "phonenumber":"132456",
+            "alternumber":"645321",
+            "email":"raj@gmail.com",
+            "password":"12341234",
+            "permanentaddress":"35B",
+            "presentaddress":"35B",
+            "department":"architecture",
+            "designation":"senior-architect",
+            "pannumber":"147285369",
+            "aadharnumber":"123546789",
+            "profileurl":"",
+            "dateofjoining":"2025-06-21",
+            "relivingdate":"",
+            "status":"active",
+            "notes":""
+          },
+      {  
+            "branchcode":"BRCH_01",
+            "role":"employee",
+            "firstname":"saj",
+            "lastname":"kumar",
+            "dob":"1998-05-15",
+            "gender":"Male",
+            "marital":"single",
+            "bloodgroup":"AB+ve",
+            "phonenumber":"123465",
+            "alternumber":"654312",
+            "email":"suj@gmail.com",
+            "password":"12341243",
+            "permanentaddress":"35B",
+            "presentaddress":"35B",
+            "department":"architecture ",
+            "designation":"architect",
+            "pannumber":"417258369",
+            "aadharnumber":"023456789",
+            "profileurl":"",
+            "dateofjoining":"2025-06-21",
+            "relivingdate":"",
+            "status":"active",
+            "notes":""
+          }
+    ]
+          
+  }
+}
+
+docs {
+  ```javascript
+  {
+    "profile":[
+      {  
+            "branchcode":"BRCH_02",
+            "role":"manager",
+            "firstname":"suraj",
+            "lastname":"",
+            "dob":"1998-05-15",
+            "gender":"Male",
+            "marital":"single",
+            "bloodgroup":"AB+ve",
+            "phonenumber":"",
+            "alternumber":"",
+            "email":"suraj@gmail.com",
+            "password":"12341234",
+            "permanentaddress":"",
+            "presentaddress":"",
+            "department":"",
+            "designation":"",
+            "pannumber":"",
+            "aadharnumber":"",
+            "profileurl":"",
+            "dateofjoining":"",
+            "relivingdate":"",
+            "status":"active",
+            "notes":""
+          },
+      {
+            "branchcode":"BRCH_02",
+            "role":"emplaoyee",
+            "firstname":"ram",
+            "lastname":"",
+            "dob":"1998-05-15",
+            "gender":"Male",
+            "marital":"single",
+            "bloodgroup":"AB+ve",
+            "phonenumber":"",
+            "alternumber":"",
+            "email":"ram@gmail.com",
+            "password":"12341234",
+            "permanentaddress":"",
+            "presentaddress":"",
+            "department":"",
+            "designation":"",
+            "pannumber":"",
+            "aadharnumber":"",
+            "profileurl":"",
+            "dateofjoining":"",
+            "relivingdate":"",
+            "status":"active",
+            "notes":""
+          },
+      {
+            "branchcode":"BRCH_02",
+            "role":"hr",
+            "firstname":"Sham",
+            "lastname":"",
+            "dob":"1998-05-15",
+            "gender":"Male",
+            "marital":"single",
+            "bloodgroup":"AB+ve",
+            "phonenumber":"",
+            "alternumber":"",
+            "email":"sham@gmail.com",
+            "password":"12341234",
+            "permanentaddress":"",
+            "presentaddress":"",
+            "department":"",
+            "designation":"",
+            "pannumber":"",
+            "aadharnumber":"",
+            "profileurl":"",
+            "dateofjoining":"",
+            "relivingdate":"",
+            "status":"active",
+            "notes":""
+          }
+    ]
+          
+  }
+  
+  ```
+}

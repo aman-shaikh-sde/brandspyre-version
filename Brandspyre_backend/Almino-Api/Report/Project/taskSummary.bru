@@ -1,0 +1,22 @@
+meta {
+  name: taskSummary
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{local}}/api/report/tasksummary/read?project_code=BRCH_01 - 250621&staff_id=BRCODE_01/01
+  body: none
+  auth: bearer
+}
+
+params:query {
+  project_code: BRCH_01 - 250621
+  staff_id: BRCODE_01/01
+  ~start_date: 
+  ~end_date: 
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTI4MDAwNSwiZXhwIjoxNzUxMzY2NDA1fQ.GfaamddT_UEYtC_1_r9Vew73ng15If8wrxhCKWDY-yY
+}

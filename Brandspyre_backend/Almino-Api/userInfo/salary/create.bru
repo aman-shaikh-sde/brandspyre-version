@@ -1,0 +1,84 @@
+meta {
+  name: create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{local}}/api/users/salary/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MjEzOTcyNywiZXhwIjoxNzUyMjI2MTI3fQ.wYP9MkxJtD-OG3WtuqzxGrJBMl7FcX4NjkmLqRIT0vc
+}
+
+body:json {
+  {
+    "userDatas":[{
+      "staff_id":"ADNORTH/01",
+      "basicsalary":10000,
+      "hra":3000,
+      "lpa":3000,
+      "gross_salary":3000,
+      "net_salary":3000,
+      "bonus":3000,
+      "pf":300,
+      "esi":300,
+      "tds":150,
+      "other_allowance":3000,
+      "deductions":3000,
+      "remarks":"remarks",
+      "processondate": "2025-06-01",
+      "status":"active"
+    }]
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "userDatas":[
+    {
+      "staff_id":"ASC/01",
+      "basicsalary":5000,
+      "hra":3000,
+      "lpa":3000,
+      "gross_salary":3000,
+      "net_salary":3000,
+      "bonus":3000,
+      "pf":3000,
+      "esi":3000,
+      "tds":3000,
+      "other_allowance":3000,
+      "deductions":3000,
+      "remarks":"remarks",
+      "processondate":"2023-10-01",
+      "processtilldate":"2024-10-01",
+      "status":"active"
+    },
+    {
+      "staff_id":"ASC/01",
+      "basicsalary":5000,
+      "hra":3000,
+      "lpa":3000,
+      "gross_salary":3000,
+      "net_salary":3000,
+      "bonus":3000,
+      "pf":3000,
+      "esi":3000,
+      "tds":3000,
+      "other_allowance":3000,
+      "deductions":3000,
+      "remarks":"remarks",
+      "processondate":"2023-10-01",
+      "processtilldate":"2024-10-01",
+      "status":"active"
+    }
+    ]
+  }
+  
+  ```
+}

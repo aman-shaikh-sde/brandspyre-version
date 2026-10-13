@@ -1,0 +1,24 @@
+meta {
+  name: viewReminder
+  type: http
+  seq: 15
+}
+
+get {
+  url: {{local}}/api/doc_meet/read
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~page: 1
+  ~search: 
+  ~dec: 
+  ~limit: 2
+  ~meet_id: 
+  ~reminder_id: 
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTUzMTIyOSwiZXhwIjoxNzUxNjE3NjI5fQ.LuzJ_gUAmJidb_waFXwe0qCH1uIbNeKhKuVDSut_01A
+}

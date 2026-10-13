@@ -1,0 +1,35 @@
+meta {
+  name: delete
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{local}}/api/users/attendance/delete/3
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTU0NDQwMSwiZXhwIjoxNzQ5NjMwODAxfQ.K5PVY51_TOmLfVdSlHRpOKtP9KM7O62IXDdQk1NgtD8
+}
+
+body:json {
+  {
+    "userData":{
+      "staff_id":"BRCODE_01/01"
+    }
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "userData":{
+      "staff_id":"BRCODE_01/01"
+    }
+  }
+  
+  ```
+}

@@ -1,0 +1,56 @@
+meta {
+  name: edit
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{local}}/api/project/task/edit/8
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTYxNzIwNywiZXhwIjoxNzUxNzAzNjA3fQ.vu94w_E5zEiKgkLDQfnV5cM05shS6brPpPKMjH5bttg
+}
+
+body:json {
+  {
+    "data":{
+      "end_date":"2025-07-03"
+    }
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "data":{
+      "branchcode": "BRCODE_01",
+      "client_code":"BRCODE_01/CLNT/03",
+      "campaign_code":"",
+      "project_code":"BRCODE_01/CLNT/03/PROJ/01",
+      "milestone_code":"V.0.0.3",
+      "task_title":"MGM",
+      "task_priority":"minor",
+      "start_date": "2025-02-13",
+      "end_date":"2025-06-13",
+      "handler_by":"BRCODE_01/01",
+      "notes":"",
+      "collaborate": [
+        {
+          "subtask_title":"FrontEnd",
+          "staff_id":"BRCODE_01/01",
+          "status":"draft"
+        }
+      ],
+      "status":"draft"
+    }
+  }
+  
+  task_priority: 'minor', 'major', 'critical', 'blocker'
+  status: 'draft', 'active', 'paused', 'completed', 'archived', 'drop'
+  
+  ```
+}

@@ -1,0 +1,29 @@
+meta {
+  name: create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{local}}/api/setting/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MDUwODMzMSwiZXhwIjoxNzUwNTk0NzMxfQ.EJjsTXXDCbl1Ohln5h6zMCkB2lOI9AQkuv9Az873g4g
+}
+
+body:json {
+  {
+    "branchcode":"BRCH_01",
+    "role":"employee"
+  }
+}
+
+docs {
+  {
+    "branchcode":"BRCH_02",
+    "role":"admin"
+  }
+}

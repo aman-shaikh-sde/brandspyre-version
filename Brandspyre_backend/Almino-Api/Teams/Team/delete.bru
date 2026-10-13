@@ -1,0 +1,39 @@
+meta {
+  name: delete
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{local}}/api/teams/delete
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTU2MTQ3NSwiZXhwIjoxNzQ5NjQ3ODc1fQ.qfnz0PfQaZXr3SfRlmNdsgiYW8ynVQK6pnIVfsztk6c
+}
+
+body:json {
+  {
+    "userData":
+    {
+      "team_id":"BRCODE_01/TEAM/01",
+      "branchcode":"BRCODE_01"
+    }
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "userData":
+    {
+      "team_id":"BRCODE_01/TEAM/01",
+      "branchcode":"BRCODE_01"
+    }
+  }
+  
+  ```
+}

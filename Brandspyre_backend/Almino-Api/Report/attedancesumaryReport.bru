@@ -1,0 +1,23 @@
+meta {
+  name: attedancesumaryReport
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/api/report/attendancesummary/read
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~branchcode: ADNORTH
+  ~startdate: 2025-03-01
+  ~enddate: 2025-06-30
+  ~page: 1
+  ~limit: 25
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MjAzNDAyNywiZXhwIjoxNzUyMTIwNDI3fQ.2TXxJmmgHEMh43Trwu64sIoVZ1Ob79J9oW3yD-HE1ro
+}

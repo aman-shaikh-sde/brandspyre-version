@@ -1,0 +1,57 @@
+meta {
+  name: removeCustomTarget
+  type: http
+  seq: 8
+}
+
+delete {
+  url: {{local}}/api/doc_meet/target/delete
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTI3Njk1OCwiZXhwIjoxNzUxMzYzMzU4fQ.PpiINMUxMwMtqbjY9gA1jqHkBVvYo2mCbgZ-Hexnb6Y
+}
+
+body:json {
+  
+  {
+    "meet_id": 2,
+    "target_id": "BRCODE_01/02",
+    "type": "staff"
+  }
+}
+
+docs {
+  ```javascript
+  
+  #remove Meeting
+  {
+    "data": {
+      "branchcode": "BRCODE_01",
+      "project_code":"BRCODE_01/CLNT/01",
+      "milestone_code":"BRCODE_01/CLNT/01",
+      "status": "drop",
+      "delete_type":"permanent"
+    }
+  }
+  
+  
+  #removeCustomTarget 
+  
+  {
+    "meet_id": 23,
+    "target_id": "STF101",
+    "type": "staff"
+  }
+  
+  
+  #removeparticipant
+  
+  {
+    "id": 55
+  }
+  
+  ```
+}

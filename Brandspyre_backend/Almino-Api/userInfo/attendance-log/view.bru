@@ -1,0 +1,24 @@
+meta {
+  name: view
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/api/users/attendance-log/read?staff_id=BRCH_01/01
+  body: none
+  auth: bearer
+}
+
+params:query {
+  staff_id: BRCH_01/01
+  ~attendance_id: 
+  ~branchcode: BRCH_02
+  ~page: 1
+  ~dec: dec
+  ~limit: 2
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTkwNDk0NiwiZXhwIjoxNzUxOTkxMzQ2fQ.Yc2zigUd24AjM531DKQzX1IVshVVVNNUnIGeY6uA8RQ
+}

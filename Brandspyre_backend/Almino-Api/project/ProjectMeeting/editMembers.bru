@@ -1,0 +1,66 @@
+meta {
+  name: editMembers
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{local}}/api/project/task/members/edit/1
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MDI2MDkwOCwiZXhwIjoxNzUwMzQ3MzA4fQ.hfETvCPF7TqwfQpLEufgki7Bzr1dot5YS5qkCT7BdHI
+}
+
+body:json {
+  {
+    "data":{
+      "branchcode": "BRCODE_01",
+      "client_code":"BRCODE_01/CLNT/03",
+      "project_code":"BRCODE_01/CLNT/03/PROJ/01",
+      "milestone_code":"BRCODE_01/CLNT/03/PROJ/01-V.0.0.1",    
+      "collaborate":[{
+        "type":"edit",
+        "participant_id":1,
+        "staff_id":"BRCODE_01/01",
+        "status":"open"
+      }]
+    }
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "data":{
+      "branchcode": "BRCODE_01",
+      "client_code":"BRCODE_01/CLNT/03",
+      "project_code":"BRCODE_01/CLNT/03/PROJ/01",
+      "milestone_code":"BRCODE_01/CLNT/03/PROJ/01-V.0.0.1",    "collaborate":[
+      {
+        "type":"add",
+        "staff_id":"",
+        "status":""
+      },
+      {
+        "type":"edit",
+        "participant_id":0,
+        "staff_id":"",
+        "status":""
+      },
+      {
+        "type":"remove",
+        "participant_id":0
+      }
+      ],
+    }
+  }
+  
+  task_priority: 'minor', 'major', 'critical', 'blocker'
+  status: 'draft', 'active', 'paused', 'completed', 'archived', 'drop'
+  
+  ```
+}

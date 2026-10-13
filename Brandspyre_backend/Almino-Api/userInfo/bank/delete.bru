@@ -1,0 +1,35 @@
+meta {
+  name: delete
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{local}}/api/users/bank/delete/2
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJBU0MvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTEyMTI4NywiZXhwIjoxNzQ5MjA3Njg3fQ.nMhbtls-3VcCV1tNN2cb85N1M4tvOYz2171Sfrb2Vac
+}
+
+body:json {
+  {
+    "userData":{
+      "staff_id":"ASC/01"
+    }
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "userData":{
+      "staff_id":"ASC/01"
+    }
+  }
+  
+  ```
+}

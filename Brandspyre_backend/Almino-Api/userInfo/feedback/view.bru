@@ -1,0 +1,34 @@
+meta {
+  name: view
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/api/users/self_rating/read?searchField=major_projects&searchValue=SubmarinProject
+  body: none
+  auth: bearer
+}
+
+params:query {
+  searchField: major_projects
+  searchValue: SubmarinProject
+  ~status: 
+  ~team_id: ADNORTH/TEAM/01
+  ~rowId: 
+  ~staff_id: 
+  ~branchcode: BRCH_02
+  ~page: 1
+  ~dec: dec
+  ~limit: 2
+  ~designation: 
+  ~department: 
+  ~reporting_to: 
+  ~team_id: 
+  ~lead_id: 
+  ~search: 
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MjE0MTI0MCwiZXhwIjoxNzUyMjI3NjQwfQ.vL-eBhz4NYLpIrsvrQ88_INZM_JmAz2p9ULCf7Hv63w
+}

@@ -1,0 +1,19 @@
+meta {
+  name: viewStaff
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{local}}/api/teams/members/read?staff_id=ADNORTH/01
+  body: none
+  auth: bearer
+}
+
+params:query {
+  staff_id: ADNORTH/01
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MjA0MDAyOSwiZXhwIjoxNzUyMTI2NDI5fQ.qrIRab_RPl-soFwIdpNEYlP8Gm_Bx_-TZVc8tPKcn-w
+}

@@ -1,0 +1,37 @@
+meta {
+  name: CustomTargets
+  type: http
+  seq: 10
+}
+
+get {
+  url: {{local}}/api/project/participants/read
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~participants_id: BRCH_02
+  ~branchcode: 
+  ~campaign_code: 
+  ~client_code: 
+  ~page: 1
+  ~search: 
+  ~dec: 
+  ~limit: 2
+  ~priority: 
+  ~status: 
+  ~status: 
+  ~project_code: 
+  ~milestone_code: 
+  ~task_id: 
+  ~team_id: 
+  ~lead_id: 
+  ~staff_id: 
+  ~delay_by: 
+  ~subtask_priority: 
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MDI1NTI4MCwiZXhwIjoxNzUwMzQxNjgwfQ.kI-OhtPbHIUKvSQF1jXq2S5guvWozw5z3S6eUKM5eRg
+}

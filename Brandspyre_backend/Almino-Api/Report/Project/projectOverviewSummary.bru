@@ -1,0 +1,19 @@
+meta {
+  name: projectOverviewSummary
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/api/report/projectoverview/read?project_code=BRCH_01 - 250621
+  body: none
+  auth: bearer
+}
+
+params:query {
+  project_code: BRCH_01 - 250621
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MjA2NDE0MSwiZXhwIjoxNzUyMTUwNTQxfQ.3PxtI1dlyJINcUZJVgHzIkdOmm4oJ3xI1Ol5jZG1zXI
+}

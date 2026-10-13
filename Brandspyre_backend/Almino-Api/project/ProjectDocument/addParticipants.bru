@@ -1,0 +1,112 @@
+meta {
+  name: addParticipants
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{local}}/api/doc_meet/participant/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTI3NTU3NSwiZXhwIjoxNzUxMzYxOTc1fQ.9IoDAdELa38JzgFjRkZL8m0PMrUwsya4fRZ09JYg1P0
+}
+
+body:json {
+  
+    {
+    "meet_id":2,
+    "participants": [
+      {
+        "person_id": "BRCH_01/03",
+        "role": "staff",
+        "isdocvisible": true
+      },
+      {
+        "person_id": "BRCH_01/CLNT/02",
+        "role": "client",
+        "isdocvisible": false
+      }
+    ]
+  }
+  
+}
+
+docs {
+  ```javascript
+  
+  [
+    {
+      "branchcode": "BR001",
+      "campaign_code": "CMP001",
+      "client_code": "CL001",
+      "project_code": "PRJ001",
+      "milestone_code": "MS001",
+      "task_id": 101,
+      "task_participants": 5,
+      "title": "Kickoff Meeting",
+      "notes": "Project kickoff for milestone 1",
+      "comm_type": "meeting", // or "doc" or "followup"
+      "status": "active",     // "completed", "declined"
+      "doc_status": "archived", // or "verfied-closed", "rework"
+      "meet_link": "https://meet.google.com/example",
+      "start_date_time": "2025-07-01T09:00:00+05:30",
+      "end_date_time": "2025-07-01T10:00:00+05:30",
+      "category": "custom",  // or "branch", "role", "all", etc.
+      "field": "project",    // or "task", "lead", etc.
+      "doc": [               // (optional) existing documents
+        { "url": "docs/introduction.pdf", "type": "pdf" }
+      ],
+      "custom": [            // target audience if category is 'custom'
+        { "target_id": "STF101", "type": "staff" },
+        { "target_id": "TM001", "type": "team" }
+      ],
+      "communication_participants": [
+        {
+          "person_id": "STF101",
+          "role": "staff",
+          "isdocvisible": true
+        },
+        {
+          "person_id": "CL201",
+          "role": "client",
+          "isdocvisible": false
+        }
+      ]
+    }
+  ]
+  
+  "comm_type":'followup', 'meeting', 'doc'
+  'active', 'completed', 'declined'
+  
+  
+  #addCustomTargets 
+  
+  {
+    "meet_id": 23,
+    "custom": [
+      { "target_id": "STF101", "type": "staff" },
+      { "target_id": "BR001", "type": "branch" }
+    ]
+  }
+  
+  {
+    "meet_id": 101,
+    "participants": [
+      {
+        "person_id": "STF001",
+        "role": "staff",
+        "isdocvisible": true,
+      },
+      {
+        "person_id": "CL002",
+        "role": "client",
+        "isdocvisible": false
+      }
+    ]
+  }
+  
+  ```
+}

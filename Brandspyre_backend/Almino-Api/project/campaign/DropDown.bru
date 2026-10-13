@@ -1,0 +1,25 @@
+meta {
+  name: DropDown
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{local}}/api/campaign/overview/dropdown
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~campaign_code: inactive
+  ~branchcode: BRCH_02
+  ~page: 1
+  ~dec: 
+  ~limit: 2
+  ~search: 
+  ~campaigntype: 
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MDQxNzg5NCwiZXhwIjoxNzUwNTA0Mjk0fQ.YH-vzwSxoSRjR-pu4UknmQwn2xeiAjjrY-Zr4x66GnU
+}

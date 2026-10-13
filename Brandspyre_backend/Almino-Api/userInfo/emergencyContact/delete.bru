@@ -1,0 +1,30 @@
+meta {
+  name: delete
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{local}}/api/users/emergency/delete/1
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJBU0MvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTEzMjkxOCwiZXhwIjoxNzQ5MjE5MzE4fQ.-QpveMVd6LjrPSUotxvXEQ7geKN1_NGgtnM_X8TwNLE
+}
+
+body:json {
+  {
+    "userData":{
+      "staff_id":"ASC/01"
+    }
+  }
+}
+
+docs {
+  {
+    "branchcode":"BRCH_02",
+    "notes":"BRCH_02BRCH_02BRCH_02BRCH_02"
+  }
+}

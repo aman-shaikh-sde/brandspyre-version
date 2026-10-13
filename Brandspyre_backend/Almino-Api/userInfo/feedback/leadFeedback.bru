@@ -1,0 +1,87 @@
+meta {
+  name: leadFeedback
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{local}}/api/users/lead_rating/edit
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MjEzNzI3NiwiZXhwIjoxNzUyMjIzNjc2fQ.SB4gNm6yBL_vx_znSn-p9Yju2cLD4AFS-pZ18TO3MnI
+}
+
+body:json {
+  {
+    "reviewData": {
+      "lead_id":"ADNORTH/01",
+      "performance_id":"PERF_1",
+      "lead_tasks_completed":3,
+      "lead_tasks_rating":3,
+      "lead_errors_count":1,
+      "lead_errors_rating":1,
+      "lead_timeliness_percent":90,
+      "lead_timeliness_rating":4,
+      "lead_communication_rating":4,
+      "lead_client_feedback_rating":4,
+      "lead_attendance_rating":4,
+      "development_initiative": true,
+      "development_initiative_remarks": "Proposed new onboarding process for junior team members",
+      "lead_technical_rating": 5,
+      "lead_technical_remarks": "Excellent technical guidance provided to team",
+      "lead_attitude_rating": 4,
+      "lead_attitude_remarks": "Always maintains positive attitude under pressure",
+      "lead_learning_rating": 4,
+      "lead_learning_remarks": "Completed advanced leadership training this quarter",
+      "lead_team_rating": 5,
+      "lead_team_remarks": "Team collaboration improved significantly under leadership",
+      "training_required": true,
+      "training_details": "Would benefit from advanced project management certification",
+      "lead_comments": "Overall strong performance. Should focus on delegating more tasks to develop team members.",
+      "status":"teamlead_reviewed"
+      }
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    branchcode: 'BR001',
+    staff_id: 'EMP001',
+    name: 'John Doe',
+    designation: 'Developer',
+    department: 'IT',
+    reporting_to: 'Manager001',
+    team_id: 'TEAM01',
+    team_name: 'Development Team',
+    lead_id: 'LEAD01',
+    lead_name: 'Team Lead',
+    joining_date: "2020-01-15",
+    year_of_experience: 3,
+    review_year: '2023-01-01|2023-12-31',
+    areas_of_strength: 'Technical skills, problem solving',
+    areas_of_improvement: 'Documentation, time management',
+    total_workingdays: '250',
+    total_dayspresent: '230',
+    total_daysabcent: '5',
+    total_daysleave: '15',
+    overall_attendance_percentage: '92%',
+    total_project_worked: '5',
+    overallprojectrating: '4.2',
+    overall_milestone_rating: '4.0',
+    total_task: '45',
+    total_task_participantavgrating: '4.1',
+    total_duration_minutes: '12500',
+    self_rating_overall: 4,
+    self_feedback: 'I performed well this year',
+    skills_learned: 'React, Node.js',
+    trainings_attended: 'Advanced JavaScript, Agile Methodology',
+    training_required: 'Technical Writing'
+  }
+  
+  ```
+}

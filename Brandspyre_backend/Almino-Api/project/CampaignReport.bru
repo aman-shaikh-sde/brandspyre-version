@@ -1,0 +1,19 @@
+meta {
+  name: CampaignReport
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{local}}/api/campaign/report/read/profile
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~campaign_code: BRCODE_01/CAMP/01
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MjE0ODkxMiwiZXhwIjoxNzUyMjM1MzEyfQ.DchMTQ7pOeaT8lwAJcMcguyIALXK4WQYwDO6h1NErQM
+}

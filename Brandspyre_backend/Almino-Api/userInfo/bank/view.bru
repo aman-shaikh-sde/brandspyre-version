@@ -1,0 +1,24 @@
+meta {
+  name: view
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/api/users/bank/read
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~rowId: 
+  ~staff_id: 
+  ~page: 1
+  ~search: 2
+  ~dec: dec
+  ~limit: 2
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJBU0MvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTEyMTI2NiwiZXhwIjoxNzQ5MjA3NjY2fQ.u2NxNdxvb6xjmRf0XMqq4iUYaIlP9-L94D_myQteX-E
+}

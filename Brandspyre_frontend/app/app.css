@@ -1,0 +1,294 @@
+@import "tailwindcss";
+/* @import "@schedule-x/theme-default/dist/index.css";
+@import "@schedule-x/theme-default/dist/index.css";
+@import "@syncfusion/ej2-base/styles/material.css";
+@import "@syncfusion/ej2-buttons/styles/material.css";
+@import "@syncfusion/ej2-calendars/styles/material.css";
+@import "@syncfusion/ej2-dropdowns/styles/material.css";
+@import "@syncfusion/ej2-inputs/styles/material.css";
+@import "@syncfusion/ej2-lists/styles/material.css";
+@import "@syncfusion/ej2-navigations/styles/material.css";
+@import "@syncfusion/ej2-popups/styles/material.css";
+@import "@syncfusion/ej2-splitbuttons/styles/material.css";
+@import "@syncfusion/ej2-react-schedule/styles/material.css"; */
+:root {
+  --color-primary: #dc2626;
+  --color-primary-hover: #b91c1c;
+  --color-bg-app: #f8fafc;
+  --color-surface: #ffffff;
+  --color-text-main: #0f172a;
+  --color-text-sub: #64748b;
+  --color-border: #e2e8f0;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+}
+@layer utilities {
+  .hover-subtle {
+    @apply transition-all duration-200;
+  }
+}
+
+@layer base {
+  .title {
+    @apply text-3xl font-semibold text-slate-900 transition-colors dark:text-slate-50;
+  }
+}
+
+.gradient-text {
+  background-image: linear-gradient(to right, #dc2626, #991b1b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.transition-transform {
+  transition-property: transform;
+}
+
+.transition-opacity {
+  transition-property: opacity;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+.scrollbar {
+  @apply [scrollbar-color:_#cbd5e1_transparent] dark:[scrollbar-color:_#334155_transparent];
+}
+
+/* Remove global scrollbar hiding */
+
+
+/* Thin scrollbar */
+::-webkit-scrollbar {
+  width: 6px;  /* Adjust this value to make it thinner/thicker */
+  height: 6px; /* For horizontal scrollbars */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius: 3px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1; 
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af; 
+}
+
+/* Dark mode styles */
+.dark ::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #4b5563;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+@layer base {
+  :root {
+    --color-custom-red: #ff1414;
+  }
+}
+
+@layer components {
+  .sidebar-group {
+    @apply flex w-full flex-col gap-y-2;
+  }
+
+  .sidebar-group-title {
+    @apply overflow-hidden text-ellipsis text-sm font-medium text-slate-600 dark:text-slate-400;
+  }
+
+  .sidebar-item {
+    @apply flex h-[40px] w-full flex-shrink-0 items-center gap-x-3 px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-400 transition-all duration-200 hover:bg-red-50 hover:text-red-700 dark:hover:bg-gray-800/60 dark:hover:text-red-400;
+
+    &.active {
+      @apply bg-red-700 text-white shadow-sm shadow-red-700/10 hover:bg-red-700 hover:text-white dark:bg-red-800 dark:text-white;
+    }
+
+    .title {
+      @apply text-3xl font-semibold text-slate-900 transition-colors dark:text-slate-50;
+    }
+
+    .btn-ghost {
+      @apply flex h-10 flex-shrink-0 items-center gap-x-3 rounded-lg p-2 text-red-400 transition-colors hover:bg-red-100 hover:text-slate-500 dark:hover:bg-red-800 dark:hover:text-slate-300;
+    }
+
+    .title {
+      @apply text-transparent bg-clip-text bg-gradient-to-b from-red-600 to-red-900;
+    }
+
+    .bg {
+      @apply bg-gradient-to-b from-red-600 to-red-900;
+    }
+  }
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+html,
+body {
+  @apply bg-white dark:bg-gray-950;
+
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+  }
+}
+
+.title {
+  color: text-transparent;
+  background-image: linear-gradient(to right, #dc2626, #b7b9bc, #dc2626);
+  background-clip: text;
+}
+
+/* Force react-hot-toast notifications to render on top of layout/header/sidebar layers */
+div[style*="z-index: 9999"],
+div[style*="z-index:9999"],
+.go3133887083 {
+  z-index: 999999 !important;
+}
+
+/* --- Premium CRM Refined UI Component Classes --- */
+
+/* Standardized Buttons */
+.crm-btn-primary {
+  @apply px-4 py-2 bg-red-700 hover:bg-red-800 text-white rounded-lg font-medium text-sm shadow-sm transition duration-200 ease-in-out transform active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center gap-2;
+}
+
+.crm-btn-secondary {
+  @apply px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 bg-white dark:bg-gray-900 rounded-lg font-medium text-sm transition duration-200 ease-in-out disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center gap-2;
+}
+
+.crm-btn-danger {
+  @apply px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium text-sm shadow-sm transition duration-200 ease-in-out disabled:opacity-50 flex items-center justify-center gap-2;
+}
+
+/* Standardized Inputs */
+.crm-input {
+  @apply w-full px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-red-600/30 focus:border-red-600 transition duration-200;
+}
+
+/* Standardized Cards */
+.crm-card {
+  @apply bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700/80 rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow duration-300;
+}
+
+/* Standardized Badges */
+.crm-badge {
+  @apply px-2.5 py-1 text-xs font-semibold rounded-full capitalize inline-flex items-center gap-1;
+}
+
+.crm-badge-success {
+  @apply bg-green-50 dark:bg-green-950/40 text-green-700 dark:text-green-400 border border-green-200 dark:border-green-800/30;
+}
+
+.crm-badge-warning {
+  @apply bg-yellow-50 dark:bg-yellow-950/40 text-yellow-700 dark:text-yellow-400 border border-yellow-200 dark:border-yellow-800/30;
+}
+
+.crm-badge-danger {
+  @apply bg-red-50 dark:bg-red-950/40 text-red-700 dark:text-red-400 border border-red-200 dark:border-red-800/30;
+}
+
+.crm-badge-info {
+  @apply bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-400 border border-blue-200 dark:border-blue-800/30;
+}
+
+/* Standardized Tables */
+.crm-table-container {
+  @apply w-full overflow-x-auto border border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-900;
+}
+
+.crm-table {
+  @apply min-w-full divide-y divide-gray-200 dark:divide-gray-700 text-left text-sm;
+}
+
+.crm-table th {
+  @apply px-4 py-3 bg-gray-50 dark:bg-gray-800 font-semibold text-gray-700 dark:text-gray-300 text-xs uppercase tracking-wider select-none;
+}
+
+.crm-table td {
+  @apply px-4 py-3.5 whitespace-nowrap text-gray-900 dark:text-gray-100 align-middle;
+}
+
+.crm-table tr {
+  @apply hover:bg-gray-50/50 dark:hover:bg-gray-800/30 transition-colors;
+}
+
+/* --- Premium CRM Responsive Design Overrides --- */
+
+@media (max-width: 767px) {
+  /* Tables horizontal scroll touch optimization */
+  .crm-table-container {
+    -webkit-overflow-scrolling: touch !important;
+    overflow-x: auto !important;
+  }
+  
+  .crm-table th, .crm-table td {
+    padding: 10px 12px !important;
+    font-size: 13px !important;
+  }
+
+  /* Modals responsiveness: full width with small margin */
+  .confirm-dialog-content,
+  .modal-content,
+  .error-modal-content {
+    width: 95% !important;
+    max-width: 100% !important;
+    padding: 18px !important;
+    border-radius: 12px !important;
+  }
+
+  /* Stack form buttons on mobile if they wrap */
+  .flex-row-mobile-stack {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  
+  .flex-row-mobile-stack button {
+    width: 100% !important;
+  }
+
+  /* Responsive Spacing & Header optimization */
+  header h2 {
+    font-size: 16px !important;
+  }
+  
+/* Standardized Select */
+.crm-select {
+  @apply w-full px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-600/30 focus:border-red-600 transition duration-200;
+}
+
+/* Skeleton Loading Utility */
+.crm-skeleton {
+  @apply animate-pulse bg-slate-200 dark:bg-slate-700 rounded-md;
+}
+
+/* Empty State Container */
+.crm-empty-state {
+  @apply flex flex-col items-center justify-center p-8 text-center bg-white dark:bg-gray-800/40 border border-dashed border-gray-300 dark:border-gray-700 rounded-xl;
+}
+
+  .crm-card {
+    padding: 16px !important;
+  }
+}
+
+

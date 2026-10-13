@@ -1,0 +1,74 @@
+meta {
+  name: create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{local}}/api/client/overview/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTYxNDQzMywiZXhwIjoxNzUxNzAwODMzfQ.4UCMCao3KEbegDdmj4vn4zZkK4153lhm30KTWifNObg
+}
+
+body:json {
+  {
+    "data": [{
+      "branchcode": "ADNORTH",
+      "client_name":"KeerthanaK",
+      "company_name":"KerInfo",
+      "primary_phone": "7418523690",
+      "email":"keer@gmail.com",
+      "office_address": "35, North Masi",
+      "website": "URL",
+      "contacts":[
+        {
+          "name":"kerth",
+          "designation":"Senior Developer",
+          "phone":"2316148980",
+          "email":"kerth@gmail.com"
+        }
+      ],
+      "industry_type":"commercial",
+      "comm_type":"email",
+      "status":"active"    
+    }]
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "data": [{
+      "branchcode": "BRCODE_01",
+      "campaign_code":"",
+      "lead_id":1,
+      "client_name":"GOKUL",
+      "company_name":"MGM",
+      "primary_phone": "8608107567",
+      "email":"gokul@gmail.com",
+      "office_address": "35, North Masi",
+      "website": "URL",
+      "contacts":[
+        {
+          "name":"",
+          "designation":"",
+          "phone":"",
+          "email":""
+        }
+      ],
+      "industry_type":"commercial",
+      "comm_type":"email",
+      "status":"active"    
+    }]
+  }
+  
+  "comm_type":"email", // 'call', 'email', 'mom', 'all', 'none'
+  "status":"active" //  'active', 'inactive', 'blacklisted'
+  
+  ```
+}

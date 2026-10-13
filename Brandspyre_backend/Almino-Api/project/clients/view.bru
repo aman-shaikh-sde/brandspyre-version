@@ -1,0 +1,26 @@
+meta {
+  name: view
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/api/client/overview/read
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~branchcode: BRCH_02
+  ~client_code: BRCODE_01/CLNT/01
+  ~campaign_code: 
+  ~page: 1
+  ~dec: 
+  ~limit: 2
+  ~status: 
+  ~search: 
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTI3NTQwNSwiZXhwIjoxNzUxMzYxODA1fQ.7LJY8jn4jxLSke5Y_phMcbT4jlB1kuZJ1_pg6qzoaFI
+}

@@ -1,0 +1,35 @@
+meta {
+  name: edit
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{local}}/api/user_resign_form/edit
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTk1MDU5NCwiZXhwIjoxNzUyMDM2OTk0fQ.6JRp67px3eXoppOApaqTuQ5EhhRjy2r1EBhFDBH06hw
+}
+
+body:json {
+  {
+    "resign_id": "RSN__3",
+    "status": "approved",
+    "approved_by": "HR_ADMIN"
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "resign_id": "RSN_12345678",
+    "status": "approved",
+    "approved_by": "HR_ADMIN"
+  }
+  
+  ```
+}

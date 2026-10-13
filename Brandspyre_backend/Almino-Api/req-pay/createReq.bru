@@ -1,0 +1,143 @@
+meta {
+  name: createReq
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{local}}/api/project/req/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTk0NjQxOSwiZXhwIjoxNzUyMDMyODE5fQ.tn6XY3BfHQdVZxpFq2qZDQ4jquMrzUeAgG5n7OEOwEA
+}
+
+body:json {
+  {
+    "project_code":"BRCH_01-250635",
+    "project_amount": 50000,
+    "invoice_no": "INV_001",
+    "invoice_date": "2025-07-07",
+    "due_date": "2025-07-15",
+    "cgst_percentage": 9,
+    "sgst_percentage": 9,
+    "discount": 500,
+    "roundoff": 0,
+    "paid_amount": 0,
+    "balance_amount": 50000,
+    "notes": "First invoice",
+    "created_by": "BRCODE_01/01",
+    "approved_staff_id": "BRCODE_01/01",
+    "data": [
+      {
+        "milestone_code": "BRCH_01-250635-v.0.3",
+        "milestone_amount": 1000,
+        "notes": "Initial milestone payment",
+        "due_date": "2025-07-15",
+        "permission": false,
+        "isrevised": false
+      }
+    ]
+  }
+}
+
+docs {
+  ```javascript
+  Full multi-milestone payment request handler has been implemented.
+  {
+    "project_code": "BRCH_01 - 250623",
+    "project_amount": 50000,
+    "approved_staff_id": "BRCODE_01/01",
+    "data": [
+      {
+        "milestone_code": "BRCH_01-250635-v.0.3",
+        "milestone_amount": 15000,
+        "notes": "Initial milestone payment",
+        "due_date": "2025-07-15",
+        "permission": false,
+        "isrevised": false
+      },
+      {
+        "milestone_code": "BRCH_01-250635-v.0.4",
+        "milestone_amount": 15000,
+        "notes": "Second milestone payment",
+        "due_date": "2025-08-15",
+        "permission": false,
+        "isrevised": false
+      },
+      {
+        "milestone_code": "BRCH_01-250635-v.0.5",
+        "milestone_amount": 20000,
+        "notes": "Third milestone payment",
+        "due_date": "2025-09-15",
+        "permission": false,
+        "isrevised": false
+      }
+    ]
+  }
+  # Add Input for New Invoice Creation (First-Time Request)
+  {
+    "project_code": "BRCH_01 - 250623",
+    "project_amount": 50000,
+    "invoice_no": "INV_001",
+    "invoice_date": "2025-07-07",
+    "due_date": "2025-09-15",
+    "cgst_percentage": 9,
+    "sgst_percentage": 9,
+    "discount": 500,
+    "roundoff": 0,
+    "paid_amount": 0,
+    "balance_amount": 50000,
+    "notes": "First invoice",
+    "created_by": "BRCODE_01/01",
+    "approved_staff_id": "BRCODE_01/01",
+    "data": [
+      {
+        "milestone_code": "BRCH_01-250635-v.0.3",
+        "milestone_amount": 15000,
+        "notes": "Initial milestone payment",
+        "due_date": "2025-07-15",
+        "permission": false,
+        "isrevised": false
+      },
+      {
+        "milestone_code": "BRCH_01-250635-v.0.4",
+        "milestone_amount": 15000,
+        "notes": "Second milestone payment",
+        "due_date": "2025-08-15",
+        "permission": false,
+        "isrevised": false
+      },
+      {
+        "milestone_code": "BRCH_01-250635-v.0.5",
+        "milestone_amount": 20000,
+        "notes": "Third milestone payment",
+        "due_date": "2025-09-15",
+        "permission": false,
+        "isrevised": false
+      }
+    ]
+  }
+  
+  # Input for Revised Milestone Invoice (Update Existing Invoice)
+  
+  {
+    "project_code": "BRCH_01 - 250623",
+    "invoice_no": "INV_001",
+    "due_date": "2025-10-15",
+    "approved_staff_id": "BRCODE_01/01",
+    "data": [
+      {
+        "milestone_code": "BRCH_01-250635-v.0.3",
+        "milestone_amount": 15000,
+        "notes": "Revised milestone payment",
+        "due_date": "2025-10-15",
+        "permission": false,
+        "isrevised": true
+      }
+    ]
+  }
+  ```
+}

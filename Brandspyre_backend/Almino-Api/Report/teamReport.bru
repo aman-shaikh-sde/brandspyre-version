@@ -1,0 +1,25 @@
+meta {
+  name: teamReport
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{local}}/api/teamview/report/read?branchcode=BRCH_01&startdate=2025-02-02&enddate=2025-03-02
+  body: none
+  auth: bearer
+}
+
+params:query {
+  branchcode: BRCH_01
+  startdate: 2025-02-02
+  enddate: 2025-03-02
+  ~overdue: 
+  ~page: 1
+  ~limit: 25
+  ~teamid: BRCH_01/TEAM/02
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MjAzNDAyNywiZXhwIjoxNzUyMTIwNDI3fQ.2TXxJmmgHEMh43Trwu64sIoVZ1Ob79J9oW3yD-HE1ro
+}

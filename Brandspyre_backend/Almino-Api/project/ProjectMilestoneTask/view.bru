@@ -1,0 +1,33 @@
+meta {
+  name: view
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/api/project/task/read?overdue=2025-03-20
+  body: none
+  auth: bearer
+}
+
+params:query {
+  overdue: 2025-03-20
+  ~start_date: 2025-03-13
+  ~upcoming: 20
+  ~end_date: 
+  ~last: 10
+  ~milestone_code: 
+  ~project_code: 
+  ~client_code: 
+  ~type: 
+  ~status: 
+  ~search: 
+  ~taskid: BRCH_02
+  ~page: 1
+  ~dec: 
+  ~limit: 2
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTkwMjc1NiwiZXhwIjoxNzUxOTg5MTU2fQ.qToq3zdER3aD04ACz1998wuAD4WcEhPcQfVous1OieQ
+}

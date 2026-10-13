@@ -1,0 +1,40 @@
+meta {
+  name: delete
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{local}}/api/user_resign_form/delete
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTYzOTY5MSwiZXhwIjoxNzQ5NzI2MDkxfQ.BAY43oX3ldSR4FyWPaF4MG9lT_Xhl3s2dIiAwSicsDE
+}
+
+body:json {
+  
+  {
+    "data": {
+      "branchcode": "BRCODE_01",
+      "campaign_code":"BRCODE_01/CAMP/01",
+      "status": "active"
+    }
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "data": {
+      "branchcode": "BRCODE_01",
+      "campaign_code":"BRCODE_01/CAMP/01",
+      "status": "active"
+    }
+  }
+  
+  ```
+}

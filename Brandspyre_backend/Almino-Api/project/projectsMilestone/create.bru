@@ -1,0 +1,61 @@
+meta {
+  name: create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{local}}/api/project/milestone/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTc3OTg0NywiZXhwIjoxNzUxODY2MjQ3fQ.uxOL4HhahY4h2K597Ni4PE6RqyIFdq6eI4HYXVEYBOE
+}
+
+body:json {
+  {
+    "data":[{
+      "branchcode": "BRCODE_01",
+      "project_code":"BRCH_01-250635",
+      "milestone_code":"v.0.3",
+      "miles_title":"MGM",
+      "milestone_type":"initial",
+      "start_date": "2025-02-13",
+      "end_date":"2025-07-13",
+      "base_amount": 0,
+      "revision_reason":"",
+      "handler_by":"BRCODE_01/01",
+      "isrevised": false,
+      "status":"draft"
+    }]
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "data":[{
+      "branchcode": "BRCODE_01",
+      "project_code":"BRCH_01 - 250621",
+      "milestone_code":"v.0.1",
+      "miles_title":"MGM",
+      "milestone_type":"initial",
+      "start_date": "2025-02-13",
+      "end_date":"2025-06-13",
+      "base_amount": 1000.00,
+      "additional_amount":0.00,
+      "revision_reason":"",
+      "handler_by":"BRCODE_01/01",
+      "approved_staff_id":"BRCODE_01/01",
+      "isrevised": false,
+      "status":"draft"
+    }]
+  }
+  
+  milestone_type: 'initial', 'revision-minor','revision-major', 'feature_add', 'bug_fix', 'feature_remove'
+  status: 'draft', 'active', 'paused', 'completed', 'archived', 'drop'
+  ```
+}

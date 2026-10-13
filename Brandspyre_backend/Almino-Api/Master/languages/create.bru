@@ -1,0 +1,50 @@
+meta {
+  name: create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{local}}/api/master/language/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTQ1Njg5OCwiZXhwIjoxNzQ5NTQzMjk4fQ.rfqcVw16TsnomN8nmbO7IYqTek6-u18E0gYYJoyVVFg
+}
+
+body:json {
+  {
+    "userDatas":[{
+      "name":"Hindi",
+      "branchcode":"BRCH_01"
+    },{
+      "name":"Tamil",
+      "branchcode":"BRCH_01"
+    },{
+      "name":"English",
+      "branchcode":"BRCH_01"
+    }]
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "userDatas":[{
+      "name":"Hindi",
+      "branchcode":""
+    },{
+      "name":"Tamil",
+      "branchcode":""
+    },{
+      "name":"English",
+      "branchcode":""
+    }]
+  }
+  
+  
+  ```
+}

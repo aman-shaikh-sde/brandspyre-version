@@ -1,0 +1,49 @@
+meta {
+  name: edit
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{local}}/api/users/language/edit/1
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJBU0MvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTEzNjMzNiwiZXhwIjoxNzQ5MjIyNzM2fQ.7h_YE-9wbPfifJ5-yLFi2pUUfo1SqMni7RAVwuMRo7w
+}
+
+body:json {
+  {
+    "userData":
+      {
+      "staff_id":"ASC/01",
+      "language_id":2,
+      "proficiency":"intermediate",
+      "can_read":true,
+      "can_write":false,
+      "can_speak":true,
+      "remark":""
+      }
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "userData":
+      {
+      "staff_id":"ASC/01",
+      "language_id":2,
+      "proficiency":"intermediate",
+      "can_read":true,
+      "can_write":false,
+      "can_speak":true,
+      "remark":""
+      }
+  }
+  
+  ```
+}

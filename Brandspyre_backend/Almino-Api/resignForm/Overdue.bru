@@ -1,0 +1,24 @@
+meta {
+  name: Overdue
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{local}}/api/overdue/read?overdue_date=2025-02-12&field=task
+  body: none
+  auth: bearer
+}
+
+params:query {
+  overdue_date: 2025-02-12
+  field: task
+  ~page: 1
+  ~search: 
+  ~dec: 
+  ~limit: 2
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTk1MTc2MywiZXhwIjoxNzUyMDM4MTYzfQ.h0WA8Zwf6TlhdbcbpfPfjJyeR3hyWYVuslDsuW_d1q4
+}

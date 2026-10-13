@@ -1,0 +1,24 @@
+meta {
+  name: view
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/api/users/reference/read
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~search: task
+  ~page: 1
+  ~rowId: 2
+  ~staff_id: admin
+  ~dec: dec
+  ~limit: 2
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJBU0MvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTExOTU2NywiZXhwIjoxNzQ5MjA1OTY3fQ.sDQsd_psmIuKPI49ZnF3WXahtug8vhKRSXaEyX-a0Xw
+}

@@ -1,0 +1,51 @@
+meta {
+  name: edit
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{local}}/api/users/salary/edit/10
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MjE0NDc0NCwiZXhwIjoxNzUyMjMxMTQ0fQ.LbXUgACgdexcUKOLZ6GngzU3SjgkDFZO1uqcrVENdj8
+}
+
+body:json {
+  {
+    "userData":{
+      "staff_id":"ADNORTH/01",
+      "status":"active"
+    }
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "userData":{
+      "staff_id":"ASC/01",
+      "basicsalary":6000,
+      "hra":6000,
+      "lpa":6000,
+      "gross_salary":6000,
+      "net_salary":6000,
+      "bonus":6000,
+      "pf":6000,
+      "esi":6000,
+      "tds":6000,
+      "other_allowance":6000,
+      "deductions":6000,
+      "remarks":"remarkssss",
+      "processondate":"2023-10-02",
+      "processtilldate":"2024-10-02",
+      "status":"active"
+    }
+  }
+  
+  ```
+}

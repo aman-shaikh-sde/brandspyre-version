@@ -1,0 +1,39 @@
+meta {
+  name: editparticipants
+  type: http
+  seq: 7
+}
+
+put {
+  url: {{local}}/api/doc_meet/participant/edit
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTI3NTI2NywiZXhwIjoxNzUxMzYxNjY3fQ.EYfYox_LpY2SBEleGB5q58pdRHHzxnX2e675gpxdxAU
+}
+
+body:json {
+  {
+    "id": 2,
+    "role": "staff",
+    "isdocvisible": false,
+    "status": "accepted"
+  }
+}
+
+docs {
+  ```javascript
+  
+  #edit participants
+  {
+    "id": 55,
+    "role": "staff",
+    "isdocvisible": true,
+    "status": "accepted"
+  }
+  "status":'pending', 'attended', 'absent', 'accepted', 'declined'
+  
+  ```
+}

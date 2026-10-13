@@ -1,0 +1,28 @@
+meta {
+  name: viewPay
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{local}}/api/project/pay/read?request_id=REQ_1
+  body: none
+  auth: bearer
+}
+
+params:query {
+  request_id: REQ_1
+  ~status: inactive
+  ~branchcode: BRCH_02
+  ~branchid: 1
+  ~status: active
+  ~page: 1
+  ~search: 
+  ~dec: 
+  ~limit: 2
+  ~manager_id: 
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTg3NzEyNCwiZXhwIjoxNzUxOTYzNTI0fQ.yNA1w36x7yK9LZM3SDOCDLOFlinzP550iewgpiQSius
+}

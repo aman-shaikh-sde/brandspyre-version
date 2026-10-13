@@ -1,0 +1,45 @@
+meta {
+  name: delete
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{local}}/api/project/milestone/delete
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTgxMzQ4MiwiZXhwIjoxNzQ5ODk5ODgyfQ.3cCXCqkOs-GYFDFK4zvrL_mptVA6zMfKz2p4xROhWj8
+}
+
+body:json {
+  
+  {
+    "data": {
+      "branchcode": "BRCODE_01",
+      "project_code":"BRCODE_01/CLNT/01",
+      "milestone_code":"BRCODE_01/CLNT/01",
+      "status": "drop",
+      "delete_type":"permanent"
+    }
+  }
+}
+
+docs {
+  ```javascript
+  
+  
+  {
+    "data": {
+      "branchcode": "BRCODE_01",
+      "project_code":"BRCODE_01/CLNT/01",
+      "milestone_code":"BRCODE_01/CLNT/01",
+      "status": "drop",
+      "delete_type":"permanent"
+    }
+  }
+  
+  ```
+}

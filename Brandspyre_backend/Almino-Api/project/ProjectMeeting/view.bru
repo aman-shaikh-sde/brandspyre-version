@@ -1,0 +1,33 @@
+meta {
+  name: view
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/api/doc_meet/read?comm_type=meeting
+  body: none
+  auth: bearer
+}
+
+params:query {
+  comm_type: meeting
+  ~overdue: 2025-06-01
+  ~project_code: BRCH_02
+  ~branchcode: 
+  ~campaign_code: 
+  ~client_code: 
+  ~page: 1
+  ~search: 
+  ~dec: 
+  ~limit: 2
+  ~priority: 
+  ~status: 
+  ~status: 
+  ~staff_id: BRCODE_01/02
+  ~team_id: 
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTkwNDA1OCwiZXhwIjoxNzUxOTkwNDU4fQ.xldD7xGUMAF-stWRS-WQHXHTJPZxtlTrHwLUVctU5mQ
+}

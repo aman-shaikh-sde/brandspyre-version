@@ -1,0 +1,37 @@
+meta {
+  name: delete
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{local}}/api/users/promotion/delete/2
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJBU0MvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTEzNzc3MSwiZXhwIjoxNzQ5MjI0MTcxfQ.4rrSSgmY7pjTyoVy2FRYFCbKroZJp37ETPg_LCWkH2E
+}
+
+body:json {
+  
+  {
+    "userData":{
+      "staff_id":"ASC/01"
+    }
+  }
+  
+}
+
+docs {
+  ```javascript
+  
+  {
+    "userData":{
+      "user_id":"3"
+    }
+  }
+  
+  ```
+}

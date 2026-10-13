@@ -1,0 +1,24 @@
+meta {
+  name: profile
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{local}}/api/client/profile/read?client_code=BRCH_01/CLNT/01&start_date=2025-05-02&end_date=2025-06-01
+  body: none
+  auth: bearer
+}
+
+params:query {
+  client_code: BRCH_01/CLNT/01
+  start_date: 2025-05-02
+  end_date: 2025-06-01
+  ~page: 1
+  ~dec: 
+  ~limit: 2
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTM2MjY5MiwiZXhwIjoxNzUxNDQ5MDkyfQ.0HNXkdDrZK_TKsQSlV39gqvBqUGpsCWAgir5IrBbDV8
+}

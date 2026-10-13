@@ -1,0 +1,22 @@
+meta {
+  name: view
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/api/users/salary/read
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~page: 1
+  ~id: 2
+  ~dec: dec
+  ~limit: 2
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MjE0NDc0NCwiZXhwIjoxNzUyMjMxMTQ0fQ.LbXUgACgdexcUKOLZ6GngzU3SjgkDFZO1uqcrVENdj8
+}

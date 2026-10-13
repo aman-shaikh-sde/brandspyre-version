@@ -1,0 +1,34 @@
+meta {
+  name: delete
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{local}}/api/users/incentive/delete/4
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJBU0MvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTExNzkxNCwiZXhwIjoxNzQ5MjA0MzE0fQ.XMF3IoFn2lp3Nllj3tsN3ygglZzVyl5wNxUCv91Si5A
+}
+
+body:json {
+  {
+    "userData":{
+      "staff_id":"ASC/01"
+    }
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "userData":{
+      "staff_id":"ASC/01"
+    }
+  }
+  ```
+}

@@ -1,0 +1,30 @@
+meta {
+  name: view
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/api/project/milestone/read
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~overdue: 2025-07-11
+  ~priority: revision-major
+  ~project_code: BRCH_02
+  ~branchcode: 
+  ~campaign_code: 
+  ~client_code: 
+  ~page: 1
+  ~search: 
+  ~dec: 
+  ~limit: 2
+  ~status: 
+  ~status: 
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTk0NjU3NywiZXhwIjoxNzUyMDMyOTc3fQ.zyp8BhgoHG1Kmf3IUr4eCA7pjFJ8W3mRAO3dAWcfRkM
+}

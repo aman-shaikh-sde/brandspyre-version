@@ -1,0 +1,26 @@
+meta {
+  name: AdminBranch
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{local}}/api/branch/admin?role=admin
+  body: none
+  auth: bearer
+}
+
+params:query {
+  role: admin
+  ~branchcode: BRCODE_01
+  ~status: active
+  ~status: inactive
+  ~page: 1
+  ~search: 
+  ~dec: 
+  ~limit: 2
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTYxNDQzMywiZXhwIjoxNzUxNzAwODMzfQ.4UCMCao3KEbegDdmj4vn4zZkK4153lhm30KTWifNObg
+}

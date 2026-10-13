@@ -1,0 +1,54 @@
+meta {
+  name: edit
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{local}}/api/doc_meet/edit/1
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTI3MjE3NSwiZXhwIjoxNzUxMzU4NTc1fQ.L0tVIpzKgKCPrgmYFw1hZw4pcaGiTbkdv3seMT0Iq4s
+}
+
+body:json {
+  {
+    "meet_id": 1,
+    "title": "Updated Discussion Plan",
+    "notes": "Agenda revised with design team",
+    "meet_link": "https://meet.example.com/abc123",
+    "start_date_time": "2025-07-01T09:30:00+05:30",
+    "end_date_time": "2025-07-01T10:30:00+05:30",
+    "status": "active"
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "meet_id": 123,
+    "title": "Updated Discussion Plan",
+    "notes": "Agenda revised with design team",
+    "meet_link": "https://meet.example.com/abc123",
+    "start_date_time": "2025-07-01T09:30:00+05:30",
+    "end_date_time": "2025-07-01T10:30:00+05:30",
+    "status": "active",
+    "doc_status": "verfied-closed",
+    "add_docs": [
+      { "url": "newdoc10.pdf", "type": "pdf" }
+    ],
+    "remove_indexes": [1],
+    "edit_docs": [
+      { "index": 0, "doc": { "url": "updateddoc1.pdf", "type": "pdf" } }
+    ]
+  }
+  
+  "status": 'active', 'completed', 'declined'
+  "doc_status": 'archived', 'verfied-closed', 'rework'
+  
+  ```
+}

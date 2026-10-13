@@ -1,0 +1,56 @@
+meta {
+  name: create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{local}}/api/campaign/leads/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTY0OTU5NCwiZXhwIjoxNzQ5NzM1OTk0fQ.BXZxP9n_-Yl5CokhuTgKd3_G-hcS9YBxlh_u-RNB_mY
+}
+
+body:json {
+  {
+    "data": [{
+      "branchcode": "BRCODE_01",
+      "campaign_code": "BRCODE_01/CAMP/01",
+      "lead_date":"2025-06-11",
+      "lead_name": "GOKUL",
+      "phone": "8608107567",
+      "email": "gokul@gmail.com",
+      "assignee_id": "BRCODE_01/01",
+      "comm_type": "email",
+      "proj_type": "commercial",
+      "status": "active"
+    }]
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "data": [{
+      "branchcode": "BRCODE_01",
+      "campaign_code":"Summer Designs",
+      "lead_date":"interiors",
+      "lead_name": "2025-06-01",
+      "phone": "2025-07-01",
+      "email": "active",
+      "assignee_id": "",
+      "comm_type": "",
+      "proj_type": "",
+      "status": "",
+      "summary": "",
+      "next_date": "",
+      "notes": ""
+    }]
+  }
+  
+  ```
+}

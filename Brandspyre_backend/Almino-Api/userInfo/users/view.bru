@@ -1,0 +1,28 @@
+meta {
+  name: view
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/api/users/read
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~search: 
+  ~staff_id: BRCH_02/02
+  ~status: inactive
+  ~branchcode: BRCH_02
+  ~termination_type: 
+  ~department: 
+  ~team_id: 
+  ~page: 1
+  ~dec: 
+  ~limit: 2
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MjEzMDI0NiwiZXhwIjoxNzUyMjE2NjQ2fQ.i9AMQd_6dhzdDCJizIP06_xfrYcOAj4tmIN74cjIHWA
+}

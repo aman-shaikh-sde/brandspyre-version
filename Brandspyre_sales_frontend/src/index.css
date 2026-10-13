@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #dc2626;
+  --color-primary-hover: #b91c1c;
+  --color-bg-app: #f8fafc;
+  --color-surface: #ffffff;
+  --color-text-main: #0f172a;
+  --color-text-sub: #64748b;
+  --color-border: #e2e8f0;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #f8fafc;
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbars matching Brandspyre ERP */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* --- Brandspyre ERP Standardized UI Classes --- */
+
+/* Standardized Buttons */
+.crm-btn-primary {
+  @apply px-4 py-2 bg-red-700 hover:bg-red-800 active:bg-red-900 text-white rounded-lg font-semibold text-xs sm:text-sm shadow-sm transition duration-200 ease-in-out disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center gap-2;
+}
+
+.crm-btn-secondary {
+  @apply px-4 py-2 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 bg-white rounded-lg font-semibold text-xs sm:text-sm transition duration-200 ease-in-out disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center gap-2 shadow-sm;
+}
+
+.crm-btn-danger {
+  @apply px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white rounded-lg font-semibold text-xs sm:text-sm shadow-sm transition duration-200 ease-in-out disabled:opacity-50 flex items-center justify-center gap-2;
+}
+
+.crm-btn-outline {
+  @apply px-4 py-2 bg-transparent border border-red-700 text-red-700 hover:bg-red-50 rounded-lg font-semibold text-xs sm:text-sm transition duration-200 ease-in-out flex items-center justify-center gap-2;
+}
+
+/* Standardized Inputs */
+.crm-input {
+  @apply w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-lg text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-red-600/20 focus:border-red-600 transition duration-200;
+}
+
+/* Standardized Cards */
+.crm-card {
+  @apply bg-white border border-slate-200 rounded-xl p-5 shadow-2xs transition-shadow duration-200;
+}
+
+/* Standardized Badges */
+.crm-badge {
+  @apply px-2.5 py-0.5 text-xs font-semibold rounded-full inline-flex items-center gap-1;
+}
+
+.crm-badge-success {
+  @apply bg-emerald-50 text-emerald-700 border border-emerald-200;
+}
+
+.crm-badge-warning {
+  @apply bg-amber-50 text-amber-700 border border-amber-200;
+}
+
+.crm-badge-danger {
+  @apply bg-rose-50 text-rose-700 border border-rose-200;
+}
+
+.crm-badge-info {
+  @apply bg-blue-50 text-blue-700 border border-blue-200;
+}
+
+.crm-badge-neutral {
+  @apply bg-slate-100 text-slate-700 border border-slate-200;
+}
+
+/* Standardized Tables */
+.crm-table-container {
+  @apply w-full overflow-x-auto border border-slate-200 rounded-xl bg-white shadow-2xs;
+}
+
+.crm-table {
+  @apply min-w-full divide-y divide-slate-200 text-left text-xs sm:text-sm;
+}
+
+.crm-table th {
+  @apply px-4 py-3 bg-slate-50 font-bold text-slate-700 text-xs uppercase tracking-wider select-none;
+}
+
+.crm-table td {
+  @apply px-4 py-3.5 whitespace-nowrap text-slate-900 align-middle;
+}
+
+.crm-table tr {
+  @apply hover:bg-slate-50/70 transition-colors;
+}

@@ -1,0 +1,41 @@
+meta {
+  name: createpay
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{local}}/api/project/pay/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTg4NDA2OCwiZXhwIjoxNzUxOTcwNDY4fQ.3toFqgvkIXytDHrnzbGY1qKQo-8La0W5JghiXPTanuM
+}
+
+body:json {
+  {
+    "project_code": "BRCH_01 - 250623",
+    "invoice_no":"",
+    "request_id": "REQ_1",
+    "paid_amount": 1,
+    "payment_mode": "upi",
+    "notes": "First installment"
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "project_code": "BRCH_01 - 250623",
+    "invoice_no":"",
+    "request_id": "REQ_1",
+    "paid_amount": 1,
+    "payment_mode": "upi",
+    "notes": "First installment"
+  }
+  
+  ```
+}

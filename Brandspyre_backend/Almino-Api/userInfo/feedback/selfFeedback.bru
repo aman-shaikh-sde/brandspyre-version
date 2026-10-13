@@ -1,0 +1,149 @@
+meta {
+  name: selfFeedback
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{local}}/api/users/self_rating/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MjEzMDY3MywiZXhwIjoxNzUyMjE3MDczfQ.LqHahr_fUrdceTeVQ_ckwpjM5rhForDUyL-bGmtpJuk
+}
+
+body:json {
+  {
+    "reviewData":{
+    "branchcode": "ADNORTH",
+    "staff_id": "ADNORTH/01",
+    "reporting_to": "ADNORTH/01",
+    "team_id": "ADNORTH/TEAM/01",
+    "year_of_experience": 4.5,
+    "review_year": "2023-01-01|2023-12-31",
+    
+    // System Attendance data
+    "total_workingdays": 261,
+    "total_dayspresent": 245,
+    "total_daysabsent": 8,
+    "total_daysleave": 8,
+    "overall_attendance_percentage": 93.87,
+    
+    // System Project metrics
+    "total_project_worked": 5,
+    "overallprojectrating": 4.2,
+    "overall_milestone_rating": 4.5,
+    "total_task": 87,
+    "total_task_participantavgrating": 4.3,
+    "total_duration_minutes": 12560,
+    
+    // System Task metrics
+    "total_tasks_handled": 42,
+    "tasks_completed_ontime": 38,
+    "reworks_revisions": 4,
+    "major_projects": "SubmarinProject",
+    
+    // Self-ratings
+    "self_timeliness_rating": 4,
+    "self_timeliness_comments": "Consistently met deadlines with quality deliverables",
+    "self_quality_rating": 4,
+    "self_quality_comments": "Maintained high code quality standards",
+    "self_communication_rating": 5,
+    "self_communication_comments": "Effective communicator within team",
+    "self_initiative_rating": 3,
+    "self_initiative_comments": "Took ownership of several key features",
+    "self_interaction_rating": 4,
+    "self_interaction_comments": "Collaborated well with cross-functional teams",
+    "self_attendance_rating": 5,
+    "self_attendance_comments": "Excellent attendance record",
+    
+    // Feedback sections
+    "what_went_well": "Successfully led the migration to React 18. Improved test coverage by 15%.",
+    "challenges_faced": "Had to balance multiple projects simultaneously in Q3.",
+    "support_needed": "More design resources for complex UI components",
+    "improvement_suggestions": "Earlier involvement in project planning phases",
+    
+    // Development
+    "new_skills_learned": "Next.js, GraphQL, Advanced React Patterns",
+    "areas_to_improve": "Advanced state management techniques",
+    "self_training_required": "Advanced TypeScript, System Design",
+    
+    // Self-evaluation
+    "self_rating_overall": 4,
+    "self_overall_feedback": "I've grown significantly in technical leadership this year and want to take on more architecture responsibilities next year.",
+    "self_trainings_attended": "React Advanced Concepts (3 days), Leadership Workshop (2 days)",
+      "status":"submitted"
+  }
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "reviewData":{
+    "branchcode": "ADNORTH",
+    "staff_id": "ADNORTH/01",
+    "reporting_to": "ADNORTH/01",
+    "team_id": "ADNORTH/TEAM/01",
+    "year_of_experience": 4.5,
+    "review_year": "2023-01-01|2023-12-31",
+    
+    // System Attendance data
+    "total_workingdays": 261,
+    "total_dayspresent": 245,
+    "total_daysabsent": 8,
+    "total_daysleave": 8,
+    "overall_attendance_percentage": 93.87,
+    
+    // System Project metrics
+    "total_project_worked": 5,
+    "overallprojectrating": 4.2,
+    "overall_milestone_rating": 4.5,
+    "total_task": 87,
+    "total_task_participantavgrating": 4.3,
+    "total_duration_minutes": 12560,
+    
+    // System Task metrics
+    "total_tasks_handled": 42,
+    "tasks_completed_ontime": 38,
+    "reworks_revisions": 4,
+    "major_projects": "SubmarinProject",
+    
+    // Self-ratings
+    "self_timeliness_rating": 4,
+    "self_timeliness_comments": "Consistently met deadlines with quality deliverables",
+    "self_quality_rating": 4,
+    "self_quality_comments": "Maintained high code quality standards",
+    "self_communication_rating": 5,
+    "self_communication_comments": "Effective communicator within team",
+    "self_initiative_rating": 3,
+    "self_initiative_comments": "Took ownership of several key features",
+    "self_interaction_rating": 4,
+    "self_interaction_comments": "Collaborated well with cross-functional teams",
+    "self_attendance_rating": 5,
+    "self_attendance_comments": "Excellent attendance record",
+    
+    // Feedback sections
+    "what_went_well": "Successfully led the migration to React 18. Improved test coverage by 15%.",
+    "challenges_faced": "Had to balance multiple projects simultaneously in Q3.",
+    "support_needed": "More design resources for complex UI components",
+    "improvement_suggestions": "Earlier involvement in project planning phases",
+    
+    // Development
+    "new_skills_learned": "Next.js, GraphQL, Advanced React Patterns",
+    "areas_to_improve": "Advanced state management techniques",
+    "self_training_required": "Advanced TypeScript, System Design",
+    
+    // Self-evaluation
+    "self_rating_overall": 4,
+    "self_overall_feedback": "I've grown significantly in technical leadership this year and want to take on more architecture responsibilities next year.",
+    "self_trainings_attended": "React Advanced Concepts (3 days), Leadership Workshop (2 days)",
+      "status":"submitted"
+  }
+  }
+  
+  ```
+}

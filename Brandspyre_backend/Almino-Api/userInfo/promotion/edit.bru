@@ -1,0 +1,58 @@
+meta {
+  name: edit
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{local}}/api/users/promotion/edit/2
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJBU0MvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTEzNzc3MSwiZXhwIjoxNzQ5MjI0MTcxfQ.4rrSSgmY7pjTyoVy2FRYFCbKroZJp37ETPg_LCWkH2E
+}
+
+body:json {
+  {
+    "userData":{
+      "staff_id":"ASC/01",
+      "currentlpa":5000,
+      "requestlpa":3000,
+      "remarks":"3000",
+      "processondate":"2025-01-25",
+      "processtilldate":"2025-01-25",
+      "typeofpromotion":"2025-01-25",
+      "percentagehike":"2025-01-25",
+      "requestbypsn":"2025-01-25",
+      "department":"2025-01-25",
+      "designation":"2025-01-25",
+      "status":"rejected"
+    }
+  }
+  
+}
+
+docs {
+  ```javascript
+  
+  {
+    "userData":{
+      "user_id":"3",
+      "currentlpa":5000,
+      "requestlpa":3000,
+      "remarks":"3000",
+      "processondate":"2025-01-25",
+      "processtilldate":"2025-01-25",
+      "typeofpromotion":"2025-01-25",
+      "percentagehike":"2025-01-25",
+      "requestbypsn":"2025-01-25",
+      "department":"2025-01-25",
+      "designation":"2025-01-25",
+      "status":"pending"
+    }
+  }
+  
+  ```
+}

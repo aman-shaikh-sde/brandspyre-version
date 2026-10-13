@@ -1,0 +1,31 @@
+/* Nuclear option - completely removes footer */
+.doc-viewer-wrapper div[style*="bottom:0"] {
+  display: none !important;
+}
+
+/* Alternative if above doesn't work */
+.doc-viewer-wrapper > div > div:last-child {
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  visibility: hidden !important;
+}
+
+
+.doc-viewer-container {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.doc-viewer-wrapper {
+  height: calc(100vh - 60px); /* Adjust based on your header height */
+  overflow: hidden;
+}
+
+/* Force PDF to take full available space */
+.doc-viewer-wrapper .react-doc-viewer-document {
+  height: 100% !important;
+  padding-bottom: 0 !important;
+}

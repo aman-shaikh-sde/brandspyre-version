@@ -1,0 +1,27 @@
+meta {
+  name: view
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/api/members/read
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~branchcode: BRCH_02
+  ~branchid: 1
+  ~status: active
+  ~status: inactive
+  ~page: 1
+  ~search: 
+  ~dec: 
+  ~limit: 2
+  ~manager_id: 
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MjA1MTk0NiwiZXhwIjoxNzUyMTM4MzQ2fQ.xgHDnUw7SOOSxn9QR35tpP3-CUGuh0HWVoB9cYKQsCU
+}

@@ -1,0 +1,23 @@
+meta {
+  name: history
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{local}}/api/teams/history?team_id=BRCH_01/TEAM/02
+  body: none
+  auth: bearer
+}
+
+params:query {
+  team_id: BRCH_01/TEAM/02
+  ~branchcode: BRCH_02
+  ~page: 1
+  ~dec: 
+  ~limit: 2
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MDUxMzE5MSwiZXhwIjoxNzUwNTk5NTkxfQ.YkDrEqBIcqnJdXA04QxA4d8FXjpfSAtTLJ05OJNoxfk
+}

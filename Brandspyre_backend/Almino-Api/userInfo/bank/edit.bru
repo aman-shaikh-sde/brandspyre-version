@@ -1,0 +1,47 @@
+meta {
+  name: edit
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{local}}/api/users/bank/edit/2
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJBU0MvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTEyMTI4NywiZXhwIjoxNzQ5MjA3Njg3fQ.nMhbtls-3VcCV1tNN2cb85N1M4tvOYz2171Sfrb2Vac
+}
+
+body:json {
+  {
+    "userData":{
+      "staff_id":"ASC/01",
+      "accountholdername":"Gokdddulcfs",
+      "accountnumber":"1425235",
+      "bankname":"GOKULBANK",
+      "bankifsc":"gjmdkv",
+      "banklocation":"0452255",
+      "active":true
+    }
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "userData":{
+      "staff_id":"ASC/01",
+      "accountholdername":"Gokddduls",
+      "accountnumber":"1425235",
+      "bankname":"GOKULBANK",
+      "bankifsc":"gjmdkv",
+      "banklocation":"0452255",
+      "active":true
+    }
+  }
+  
+  ```
+}

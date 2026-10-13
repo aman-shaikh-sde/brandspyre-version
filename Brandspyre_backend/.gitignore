@@ -1,0 +1,80 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production Build Output
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# Uploads & User Generated Content
+uploads/
+recordings/
+temp/
+tmp/
+
+# Environment & Sensitive Configuration
+.env
+.env.*
+*.env
+.env.local
+.env.development
+.env.test
+.env.production
+!.env.example
+
+# Credentials, Keys & Secrets
+*.pem
+*.key
+*.cert
+*.crt
+*.pfx
+*.p12
+id_rsa*
+secrets/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Test & Coverage
+coverage/
+.nyc_output/
+*.lcov
+
+# Archives & Temporary files
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+backend.zip
+
+# IDE & Editor files
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS Generated Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+[Dd]esktop.ini

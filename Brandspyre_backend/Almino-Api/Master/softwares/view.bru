@@ -1,0 +1,25 @@
+meta {
+  name: view
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/api/master/software/read
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~fieldKey: task
+  ~branchcode: BRCH_02
+  ~page: 1
+  ~id: 2
+  ~role: admin
+  ~dec: dec
+  ~limit: 2
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTU2NzcwOCwiZXhwIjoxNzQ5NjU0MTA4fQ.55zZiQ-XUB8aXX4jaTf2MpK5tz5ATJkfgEvN_v6ooHs
+}

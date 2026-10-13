@@ -1,0 +1,33 @@
+meta {
+  name: InvoiceProfile
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{local}}/api/project/invoice/read
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~invoice_id: INV_1
+  ~overdue: 
+  ~project_code: 
+  ~hsn_sac: 
+  ~invoice_start_date: 
+  ~invoice_end_date: 
+  ~branchcode: 
+  ~campaign_code: 
+  ~client_code: 
+  ~start_date: 
+  ~end_date: 
+  ~page: 1
+  ~limit: 25
+  ~status: 
+  ~revised_count: 
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTk1MTkwNiwiZXhwIjoxNzUyMDM4MzA2fQ.PTlf7uYfa3TZQ3-aRn0Hyt-FlsWWZzzgEZ6Fnr6ZzoU
+}

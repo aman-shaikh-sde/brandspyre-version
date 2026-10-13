@@ -1,0 +1,33 @@
+meta {
+  name: view
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/api/users/leavereq/read
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~is_half_day: 
+  ~leave_duration_hours: 
+  ~partial_day_type: 
+  ~branchcode: BRCH_02
+  ~leave_type: casula
+  ~approved_by: 
+  ~approval_date: 2025-07-04
+  ~page: 1
+  ~id: 2
+  ~dec: dec
+  ~limit: 2
+  ~staff_id: 
+  ~start_date: 
+  ~end_date: 
+  ~status: 
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTc3NTc3NCwiZXhwIjoxNzUxODYyMTc0fQ.O3j-YUi8TL2FsCPlIyRpT5ur0nd_AZtH--sFE_LeYFc
+}

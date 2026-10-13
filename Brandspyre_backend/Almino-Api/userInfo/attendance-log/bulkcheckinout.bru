@@ -1,0 +1,46 @@
+meta {
+  name: bulkcheckinout
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{local}}/api/users/attendance-log-bulk/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJzdXBlcmFkbWluIiwiYnJjb2RlIjoiQlJDT0RFXzAxIiwiaWF0IjoxNzQ3OTE2Mjg5LCJleHAiOjE3NDgwMDI2ODl9.0O9FiOX7f4OI5xfqSuNuDCZjKxwhfKk42KueOwbg7vM
+}
+
+body:json {
+  {
+    "staff_id": "BRCH_01/01",
+    "attendance_date": "2025-07-06",
+    "check_in": "2025-07-06T09:00:00"
+  }
+}
+
+docs {
+  ```javascript
+  👉 For Check-in:
+  
+  {
+    "branchcode": "BRCH_01",
+    "staff_id": ["BRCH_01/01", "BRCH_01/02"],
+    "checkin": "2025-07-05T09:00:00",
+    "attendance_date": "2025-07-05"
+  }
+  
+  👉 For Check-out:
+  
+  {
+    "branchcode": "BRCH_01",
+    "staff_id": ["BRCH_01/01", "BRCH_01/02"],
+    "checkout": "2025-07-05T17:45:00",
+    "attendance_date": "2025-07-05"
+  }
+  
+  ```
+}

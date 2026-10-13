@@ -1,0 +1,27 @@
+meta {
+  name: viewReq
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/api/project/req/read
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~status: inactive
+  ~branchcode: BRCH_02
+  ~branchid: 1
+  ~status: active
+  ~page: 1
+  ~search: 
+  ~dec: 
+  ~limit: 2
+  ~manager_id: 
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTg1Nzc4NCwiZXhwIjoxNzUxOTQ0MTg0fQ.syL7U71BBIenSJVgUsoaM2Swx6eyWSGGBXNkXuth1RI
+}

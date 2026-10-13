@@ -1,0 +1,48 @@
+meta {
+  name: edit
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{local}}/api/users/software/edit/4
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTY0ODQzOSwiZXhwIjoxNzQ5NzM0ODM5fQ.vPAYiso2Zzl3OlxkvvNAnQzgEKM7s1N82cGVbcG2X5I
+}
+
+body:json {
+  {
+    "userData":{
+      "staff_id":"BRCODE_01/01",
+      "software_id":6,
+      "proficiency":"advance",
+      "remark":""
+    }
+  }
+}
+
+docs {
+  {
+    "branchcode":"1",
+    "data":{
+      "project": {
+          "all": false,
+          "own": true,
+          "edit": false,
+          "create": false,
+          "delete": true
+        },
+      "task": {
+        "all": false,
+        "own": true,
+        "edit": true,
+        "create": true,
+        "delete": true
+      }
+      }
+  }
+}

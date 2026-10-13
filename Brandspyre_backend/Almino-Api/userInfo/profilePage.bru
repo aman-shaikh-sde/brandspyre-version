@@ -1,0 +1,24 @@
+meta {
+  name: profilePage
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{local}}/api/users/profile
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "staff_id":"BRCODE_01/01"
+  }
+}
+
+docs {
+  {
+    "email":"platformadmin@gmail.com",
+    "password":"12341234"
+  }
+}

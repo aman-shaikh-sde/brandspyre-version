@@ -1,0 +1,68 @@
+meta {
+  name: edit
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{local}}/api/project/milestone/edit
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MDY3ODQ4NCwiZXhwIjoxNzUwNzY0ODg0fQ.Ybxr_ESTeo0Xo-8iCRPfJyHbjVhEW92Vkwqm0ddTBmQ
+}
+
+body:json {
+  {
+    "data":{
+      "branchcode": "BRCODE_01",
+      "milestone_code":"BRCH_01 - 250621-v.0.1",
+      "milestone_type":"revision-major",
+      "revision_reason":"notes",
+      "approved_staff_id":"BRCODE_01/01",
+      "isrevised": true
+    }
+  }
+  
+}
+
+docs {
+  ```javascript
+  Team Lead
+  {
+    "data":{
+      "branchcode": "BRCODE_01",
+      "milestone_code":"BRCH_01 - 250621-v.0.1",
+      "miles_title":"MGM",
+      "milestone_type":"initial",
+      "start_date": "2025-02-13",
+      "end_date":"2025-06-13",
+      "base_amount": 5000.00,
+      "additional_amount":0.00,
+      "revision_reason":"",
+      "handler_by":"BRCODE_01/01",
+      "status":"draft"
+    }
+  }
+  
+  Accounts Teams
+  {
+    "data":{
+      "branchcode": "BRCODE_01",
+      "milestone_code":"BRCH_01 - 250621-v.0.1",
+      "milestone_type":"revision-major",
+      "base_amount": 5000.00,
+      "additional_amount":0.00,
+      "revision_reason":"notes",
+      "approved_staff_id":"BRCODE_01/01",
+      "isrevised": true
+    }
+  }
+  
+  priority : 'minor', 'major', 'critical', 'blocker'
+  status: 'draft', 'planning', 'active', 'paused', 'completed', 'revised','client_review', 'drop'
+  
+  ```
+}

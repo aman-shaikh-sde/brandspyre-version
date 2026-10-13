@@ -1,0 +1,64 @@
+meta {
+  name: create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{local}}/api/project/task/members/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MDI1NTI4MCwiZXhwIjoxNzUwMzQxNjgwfQ.kI-OhtPbHIUKvSQF1jXq2S5guvWozw5z3S6eUKM5eRg
+}
+
+body:json {
+  {
+    "data": {
+      "task_id": 1,
+      "branchcode": "BRCODE_01",
+      "collaborate": [
+        {
+          "staff_id": "BRCODE_01/01",
+          "subtask_title": "Frontend",
+          "status": "inprocess"
+        },
+        {
+          "staff_id": "BRCODE_01/02",
+          "subtask_title": "Backend",
+          "status": "draft"
+        }
+      ]
+    }
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "data": {
+      "task_id": 1,
+      "branchcode": "BRCODE_01",
+      "collaborate": [
+        {
+          "staff_id": "BRCODE_01/01",
+          "subtask_title": "Frontend",
+          "status": "inprocess"
+        },
+        {
+          "staff_id": "BRCODE_01/02",
+          "subtask_title": "Backend",
+          "status": "draft"
+        }
+      ]
+    }
+  }
+  
+  task_priority: 'minor', 'major', 'critical', 'blocker'
+  status: 'draft', 'active', 'paused', 'completed', 'archived', 'drop'
+  
+  ```
+}

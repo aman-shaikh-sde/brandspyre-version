@@ -1,0 +1,52 @@
+meta {
+  name: edit
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{local}}/api/setting/edit/2
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJzdXBlcmFkbWluIiwiYnJjb2RlIjoiQlJDT0RFXzAxIiwiaWF0IjoxNzQ3OTE5NzUxLCJleHAiOjE3NDgwMDYxNTF9._zqwBkoMhbbeemxrmkiCjZqYL72Y_PJ7lz1bmslVFqk
+}
+
+body:json {
+  {
+    "branchcode":"BRCH_02",
+    "data":{
+      "task": {
+        "all": true,
+        "own": false,
+        "edit": true,
+        "create": true,
+        "delete": true
+      }
+      }
+  }
+}
+
+docs {
+  {
+    "branchcode":"1",
+    "data":{
+      "project": {
+          "all": false,
+          "own": true,
+          "edit": false,
+          "create": false,
+          "delete": true
+        },
+      "task": {
+        "all": false,
+        "own": true,
+        "edit": true,
+        "create": true,
+        "delete": true
+      }
+      }
+  }
+}

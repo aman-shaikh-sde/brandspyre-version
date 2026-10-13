@@ -1,0 +1,47 @@
+meta {
+  name: edit
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{local}}/api/users/education/edit/1
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJBU0MvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTExNTU1MywiZXhwIjoxNzQ5MjAxOTUzfQ.u6xdgDppJGdVn7VPsbboqHaHfL3Sw3vf5vyfdnQosbg
+}
+
+body:json {
+  {
+    "userData":{
+      "staff_id":"ASC/01",
+      "degree":"BE Mechatronics",
+      "institute":"Suguna College of engineering",
+      "passing":"2019",
+      "start_year":"2025-02-02",
+      "end_year":"2025-02-02",
+      "percentage":"80%"
+    }
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "userData":{
+      "staff_id":"ASC/01",
+      "degree":"BE Mechatronics",
+      "institute":"Suguna College of engineering",
+      "passing":"2019",
+      "start_year":"2025-02-02",
+      "end_year":"2025-02-02",
+      "percentage":"80%"
+    }
+  }
+  
+  ```
+}

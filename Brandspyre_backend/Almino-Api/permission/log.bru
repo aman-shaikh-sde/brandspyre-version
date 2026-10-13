@@ -1,0 +1,19 @@
+meta {
+  name: log
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{local}}/api/setting/read
+  body: json
+  auth: inherit
+}
+
+params:query {
+  ~page: 1
+  ~branchid: 3
+  ~roleid: 
+  ~dec: 
+  ~limit: 2
+}

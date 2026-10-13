@@ -1,0 +1,40 @@
+meta {
+  name: view
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/api/doc_meet/read?comm_type=meeting
+  body: none
+  auth: bearer
+}
+
+params:query {
+  comm_type: meeting
+  ~person_id: BRCODE_01/01
+  ~role: staff
+  ~comm_type: doc
+  ~participants_id: BRCH_02
+  ~branchcode: 
+  ~campaign_code: 
+  ~client_code: 
+  ~page: 1
+  ~search: 
+  ~dec: 
+  ~limit: 2
+  ~priority: 
+  ~status: 
+  ~status: 
+  ~project_code: 
+  ~milestone_code: 
+  ~task_id: 
+  ~team_id: 
+  ~lead_id: 
+  ~delay_by: 
+  ~subtask_priority: 
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTk2Mjk2OSwiZXhwIjoxNzUyMDQ5MzY5fQ.4EgmvgevRQZyKy5RJpccOBEAkOk0yXmRhkecHyHf4ms
+}

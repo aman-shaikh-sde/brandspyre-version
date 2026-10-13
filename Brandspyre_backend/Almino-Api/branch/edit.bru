@@ -1,0 +1,38 @@
+meta {
+  name: edit
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{local}}/api/branch/edit/2
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTQ1NjMxMywiZXhwIjoxNzQ5NTQyNzEzfQ.w43HIV-CHIWtkSrvp9jdgyXrM_VjsulU65XbmWmAIMw
+}
+
+body:json {
+  {
+          "branch_hours": "8-HRS"
+  }
+}
+
+docs {
+  {
+          "branch_hours": "9-HRS",
+          "branchcode":"BRCH_02",
+          "role":"Admin",
+          "name":"Branch2",
+          "location":"MaduraiNorth",
+          "mobile":"87608107567",
+          "email":"schaingokul@gmial.com",
+          "manager_id":"BRCH_02_MNG",
+          "managername":"Manager",
+          "notes":"",
+          "status":"",
+          "closeReason":""
+  }
+}

@@ -1,0 +1,22 @@
+meta {
+  name: profile
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{local}}/api/project/overview/profile/read?project_code=BRCH_01 - 250621
+  body: none
+  auth: bearer
+}
+
+params:query {
+  project_code: BRCH_01 - 250621
+  ~page: 1
+  ~dec: 
+  ~limit: 2
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MDg0MDk3NywiZXhwIjoxNzUwOTI3Mzc3fQ.0Q9L2p79pH3_mY3bfGOiK6VWytXO2sbGLxyZTlrkg70
+}

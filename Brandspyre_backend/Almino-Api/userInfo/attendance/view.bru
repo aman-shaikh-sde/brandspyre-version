@@ -1,0 +1,35 @@
+meta {
+  name: view
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/api/users/attendance/read?team_id=ADNORTH/TEAM/01
+  body: none
+  auth: bearer
+}
+
+params:query {
+  team_id: ADNORTH/TEAM/01
+  ~attendance_date: 2025-07-06
+  ~rowId: 
+  ~staff_id: 
+  ~isleaveapproved: true
+  ~isleaveapproved: false
+  ~status: present
+  ~status: absent
+  ~status: leave
+  ~start_date: 2025-07-04
+  ~end_date: 2025-07-06
+  ~worked_hours_min: 
+  ~worked_hours_max: 
+  ~branchcode: BRCH_02
+  ~page: 1
+  ~dec: dec
+  ~limit: 2
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MjA0Mzc1NywiZXhwIjoxNzUyMTMwMTU3fQ.nXYXRTfIrcSv5zu8TNhK-TRzu0g5-S6rX7I14IBo2nA
+}

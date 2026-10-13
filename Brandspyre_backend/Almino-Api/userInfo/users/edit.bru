@@ -1,0 +1,83 @@
+meta {
+  name: edit
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{local}}/api/users/edit
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJBU0MvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTExMTUxNSwiZXhwIjoxNzQ5MTk3OTE1fQ.EGoBzrSc1oyBBwzvNq8SJJeCajRJVxZ3ampDo97gbpo
+}
+
+body:json {
+  {
+    "profile":
+          {
+            "staff_id":"BRCH_02/01",
+            "branchcode":"BRCH_02",
+            "role":"Manager",
+            "firstname":"suraj",
+            "lastname":"",
+            "dob":"1998-05-15",
+            "gender":"Male",
+            "marital":"single",
+            "bloodgroup":"AB+ve",
+            "phonenumber":"",
+            "alternumber":"",
+            "email":"suraj@gmail.com",
+            "password":"12341234",
+            "permanentaddress":"",
+            "presentaddress":"",
+            "department":"",
+            "designation":"",
+            "pannumber":"",
+            "aadharnumber":"",
+            "profileurl":"",
+            "dateofjoining":"",
+            "relivingdate":"",
+            "status":"active",
+            "notes":""
+          }
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "profile":
+          {
+            "staff_id":"BRCH_02/01",
+            "branchcode":"BRCH_02",
+            "role":"Manager",
+            "firstname":"suraj",
+            "lastname":"",
+            "dob":"1998-05-15",
+            "gender":"Male",
+            "marital":"single",
+            "bloodgroup":"AB+ve",
+            "phonenumber":"",
+            "alternumber":"",
+            "email":"suraj@gmail.com",
+            "password":"12341234",
+            "permanentaddress":"",
+            "presentaddress":"",
+            "department":"",
+            "designation":"",
+            "pannumber":"",
+            "aadharnumber":"",
+            "profileurl":"",
+            "dateofjoining":"",
+            "relivingdate":"",
+            "status":"active",
+            "notes":""
+          }
+  }
+  
+  ```
+}

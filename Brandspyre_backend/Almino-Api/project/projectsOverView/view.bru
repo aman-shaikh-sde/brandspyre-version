@@ -1,0 +1,38 @@
+meta {
+  name: view
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/api/project/overview/read?overdue=2024-08-03
+  body: none
+  auth: bearer
+}
+
+params:query {
+  overdue: 2024-08-03
+  ~start_date: 2025-08-04
+  ~end_date: 2025-08-05
+  ~paystatus: paid
+  ~filter_type: last
+  ~n_days: 7
+  ~project_code: BRCH_02
+  ~branchcode: 
+  ~campaign_code: 
+  ~client_code: 
+  ~page: 1
+  ~search: 
+  ~dec: 
+  ~limit: 2
+  ~priority: 
+  ~status: 
+  ~status: 
+  ~filter_type: upcoming
+  ~filter_type: custome
+  ~filter_type: deadline
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTg4MjQ3MiwiZXhwIjoxNzUxOTY4ODcyfQ.wi_vXA4qYd3V_N2m1mfWxPlRjRt1LEkzZCfdbeO6K_o
+}

@@ -1,0 +1,62 @@
+meta {
+  name: create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{local}}/api/users/reference/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJBU0MvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTExODM3OCwiZXhwIjoxNzQ5MjA0Nzc4fQ.m4JmWqBsdVpyxyobR1R-c4CNhnfvPAKc22jfa7gVgnc
+}
+
+body:json {
+  {
+    "userDatas":[{
+      "staff_id":"ASC/01",
+      "referstaff_id":"BRCH_02/02",
+      "name":"ram",
+      "relation":"Brothers",
+      "contactno":"86081075675",
+      "address":"35B North Masi Street, Madurai - 625001"
+    },
+               {
+      "staff_id":"ASC/01",
+      "referstaff_id":"BRCH_02/02",
+      "name":"ram",
+      "relation":"Brothgfjfers",
+      "contactno":"86081tjt075675",
+      "address":"35B North Masi Street, Madurai - 625001"
+    }]
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "userDatas":[{
+      "staff_id":"ASC/01",
+      "referstaff_id":"BRCH_02/02",
+      "name":"ram",
+      "relation":"Brothers",
+      "contactno":"86081075675",
+      "address":"35B North Masi Street, Madurai - 625001"
+    },
+               {
+      "staff_id":"ASC/01",
+      "referstaff_id":"BRCH_02/02",
+      "name":"ram",
+      "relation":"Brothgfjfers",
+      "contactno":"86081tjt075675",
+      "address":"35B North Masi Street, Madurai - 625001"
+    }]
+  }}]
+  }
+  
+  ```
+}

@@ -1,0 +1,47 @@
+meta {
+  name: addReminder
+  type: http
+  seq: 12
+}
+
+post {
+  url: {{local}}/api/doc_meet/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTU0ODYyNiwiZXhwIjoxNzUxNjM1MDI2fQ.qZKekmf13_tQnNIfVargoaLqw36zmS1t0rnVk76Td6g
+}
+
+body:json {
+   {
+      "meet_id": 1,
+      "title": "Daily Standup Reminder",
+      "description": "Don't forget the standup call",
+      "repeat_type": "daily", 
+      "repeat_days": ["mon", "tue", "wed"],
+      "start_time": "09:30:00",
+      "start_date": "2025-07-05",
+      "end_date": "2025-07-31",
+      "active": true
+  }
+}
+
+docs {
+  ```javascript
+  
+   {
+      "meet_id": 1,
+      "title": "Daily Standup Reminder",
+      "description": "Don't forget the standup call",
+      "repeat_type": "daily", // or 'weekly' or 'custom'
+      "repeat_days": ["mon", "tue", "wed"],// Only if repeat_type = 'custom'
+      "start_time": "09:30:00",
+      "start_date": "2025-07-05",
+      "end_date": "2025-07-31",
+      "active": true
+  }
+  
+  ```
+}

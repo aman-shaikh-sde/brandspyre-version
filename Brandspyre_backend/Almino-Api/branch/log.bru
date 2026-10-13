@@ -1,0 +1,23 @@
+meta {
+  name: log
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{local}}/api/branch/read
+  body: json
+  auth: inherit
+}
+
+params:query {
+  ~status: InActive
+  ~page: 1
+  ~branchid: 3
+  ~location: 
+  ~name: 
+  ~email: 
+  ~dec: 
+  ~limit: 2
+  ~manager_id: 
+}

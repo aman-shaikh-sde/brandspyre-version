@@ -1,0 +1,30 @@
+meta {
+  name: login
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{local}}/api/users/login
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "email":"email@gmail.com",
+    "password":"12341234",
+    "ip":"192.1.1.5.03",
+    "device":"Desktop"
+  }
+  
+}
+
+docs {
+  {
+    "email":"platformadmin@gmail.com",
+    "password":"12341234",
+    "ip":"192.1.1.5.03",
+    "device":"Desktop"
+  }
+}

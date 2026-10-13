@@ -1,0 +1,27 @@
+meta {
+  name: view
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/api/campaign/overview/read
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~status: inactive
+  ~branchcode: BRCH_02
+  ~branchid: 1
+  ~status: active
+  ~page: 1
+  ~search: 
+  ~dec: 
+  ~limit: 2
+  ~manager_id: 
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MDE2MzQyMCwiZXhwIjoxNzUwMjQ5ODIwfQ.UdhE9XaoT8wkphdbtqu0z4DLXlfxmj0BnS2EYFhl7GQ
+}

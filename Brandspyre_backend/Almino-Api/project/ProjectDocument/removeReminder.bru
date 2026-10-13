@@ -1,0 +1,32 @@
+meta {
+  name: removeReminder
+  type: http
+  seq: 14
+}
+
+delete {
+  url: {{local}}/api/doc_meet/target/delete
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTI3Njk1OCwiZXhwIjoxNzUxMzYzMzU4fQ.PpiINMUxMwMtqbjY9gA1jqHkBVvYo2mCbgZ-Hexnb6Y
+}
+
+body:json {
+  {
+    "reminder_id": 5
+  }
+}
+
+docs {
+  ```javascript
+  
+  #remove Reminder
+  {
+    "reminder_id": 5
+  }
+  
+  ```
+}

@@ -1,0 +1,43 @@
+meta {
+  name: edit
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{local}}/api/members/edit/2
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTgxNDUzMSwiZXhwIjoxNzQ5OTAwOTMxfQ.hxPton3KJ17o1Z3vLxtE3AihTSTMArAvMVHGPsteY_M
+}
+
+body:json {
+  {
+    "userData":{
+      "team_id":"BRCODE_01/TEAM/01",
+      "branchcode":"BRCODE_01",
+      "staff_id":"BRCODE_01/01",
+      "role":"member",
+      "status":"active"
+    }
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "userData":{
+      "team_id":"BRCODE_01/TEAM/01",
+      "branchcode":"BRCODE_01",
+      "staff_id":"BRCODE_01/01",
+      "role_in_team":"Lead",
+      "status":"active"
+    }
+  }
+  
+  ```
+}

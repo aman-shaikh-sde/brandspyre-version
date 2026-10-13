@@ -1,0 +1,45 @@
+meta {
+  name: create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{local}}/api/master/leavetypes/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTQ1NzEzMCwiZXhwIjoxNzQ5NTQzNTMwfQ.zgXPim2isuiCYMT0bxmKPs4ALOTbE4Bgp49OLrj-yX4
+}
+
+body:json {
+  {
+    "userDatas":[{
+      "branchcode":"BRCH_01",
+      "name":"Casual- Leave",
+      "year":"2025",
+      "description":"",
+      "total_days":"12",
+      "status":"open"
+    }]
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "userDatas":[{
+      "branchcode":"BRCH_01",
+      "name":"anualleave",
+      "year":"2025",
+      "description":"",
+      "total_days":"12",
+      "status":"open"
+    }]
+  }
+  
+  ```
+}

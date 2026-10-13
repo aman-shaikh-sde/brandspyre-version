@@ -1,0 +1,38 @@
+meta {
+  name: editReminder
+  type: http
+  seq: 13
+}
+
+put {
+  url: {{local}}/api/doc_meet/participant/edit
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTI3NTI2NywiZXhwIjoxNzUxMzYxNjY3fQ.EYfYox_LpY2SBEleGB5q58pdRHHzxnX2e675gpxdxAU
+}
+
+body:json {
+  {
+    "reminder_id": 5,
+    "title": "Updated Reminder",
+    "repeat_type": "weekly",
+    "start_time": "10:30:00"
+  }
+}
+
+docs {
+  ```javascript
+  
+  #edit Reminder
+  {
+    "reminder_id": 5,
+    "title": "Updated Reminder",
+    "repeat_type": "weekly",
+    "start_time": "10:30:00"
+  }
+  
+  ```
+}

@@ -1,0 +1,45 @@
+meta {
+  name: edit
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{local}}/api/users/reference/edit/2
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJzdXBlcmFkbWluIiwiYnJjb2RlIjoiQlJDT0RFXzAxIiwiaWF0IjoxNzQ4OTQ3MzAwLCJleHAiOjE3NDkwMzM3MDB9.-BLVw05o_B82T9jEASSCtKn2vBFAQBdGzLrQ5zSEltA
+}
+
+body:json {
+  {
+    "userData":{
+        "staff_id": "ASC/01",
+        "referstaff_id": "BRCH_02/02",
+        "name": "ram",
+        "relation": "Brothers",
+        "contactno": "86081075675",
+        "address": "35B North Masi Street, Madurai - 625001"
+        }
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "userData":{
+        "staff_id": "ASC/01",
+        "referstaff_id": "BRCH_02/02",
+        "name": "ram",
+        "relation": "Brothers",
+        "contactno": "86081075675",
+        "address": "35B North Masi Street, Madurai - 625001"
+        }
+  }
+  
+  ```
+}

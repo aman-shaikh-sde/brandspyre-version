@@ -1,0 +1,62 @@
+meta {
+  name: create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{local}}/api/project/overview/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTc3OTg0NywiZXhwIjoxNzUxODY2MjQ3fQ.uxOL4HhahY4h2K597Ni4PE6RqyIFdq6eI4HYXVEYBOE
+}
+
+body:json {
+  {
+    "data":{
+      "branchcode": "BRCODE_01",
+      "client_code":"BRCH_01/CLNT/01",
+      "project_code":"250635",
+      "title":"Construction",
+      "priority": "minor",
+      "type":"residintial",
+      "loc": "35, North Masi",
+      
+      "start_date":"2025-02-02",
+      "end_date":"2025-08-02",
+      "handler_by":"BRCH_01/02",
+      "notes":"Project description",
+      "status":"draft"
+    }
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "data": [{
+      "branchcode": "BRCODE_01",
+      "campaign_code":"1", // OR NOT 
+      "lead_id":1, // OR NOT 
+      "client_code":"BRCODE_01/CLIT/01",
+      "title":"MGM",
+      "priority": "minor",
+      "type":"gokul@gmail.com",
+      "loc": "35, North Masi",
+      "notes":"email",
+      "budget": 0.00,
+      "overallcost":0.00,
+      "start_date":"Senior Developer",
+      "end_date":"2134567890",
+      "handler_by":"gokul@gmail.com",
+      "status":"draft"
+    }]
+  }
+  priority : 'minor', 'major', 'critical', 'blocker'
+  status: 'draft', 'planning', 'active', 'paused', 'completed', 'revised','client_review', 'drop'
+  ```
+}

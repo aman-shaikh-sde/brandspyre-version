@@ -1,0 +1,35 @@
+meta {
+  name: removeparticipant
+  type: http
+  seq: 9
+}
+
+delete {
+  url: {{local}}/api/doc_meet/participant/delete
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTI3NTcyNSwiZXhwIjoxNzUxMzYyMTI1fQ.NtM1GRhPGgcNnhkp0W6iuhOZcFvxzhgDrWz-IAMy0zc
+}
+
+body:json {
+  
+  {
+    "id": 5
+  }
+  
+}
+
+docs {
+  ```javascript
+  
+  #removeparticipant
+  
+  {
+    "id": 55
+  }
+  
+  ```
+}

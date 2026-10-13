@@ -1,0 +1,58 @@
+meta {
+  name: create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{local}}/api/users/incentive/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJBU0MvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTExNzU0MSwiZXhwIjoxNzQ5MjAzOTQxfQ.hHEZ1Rcg_9jWFdeHVbjvlhJxy6CIy5QLOXXJq4EyYzw
+}
+
+body:json {
+  {
+    "userDatas":[
+      {
+      "staff_id":"ASC/01",
+      "incentive":5000,
+      "days":3000,
+      "remark":"3000",
+      "processondate":"2025-01-25",
+      "processtilldate":"2025-01-25",
+      "status":"isapproved"
+      }]
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "userDatas":[
+      {
+      "staff_id":"ASC/01",
+      "incentive":5000,
+      "days":3000,
+      "remark":"3000",
+      "processondate":"2025-01-25",
+      "processtilldate":"2025-01-25",
+      "status":"isapproved"
+      },
+      {
+      "staff_id":"ASC/01",
+      "incentive":5000,
+      "days":3000,
+      "remark":"3000",
+      "processondate":"2025-01-25",
+      "processtilldate":"2025-01-25",
+      "status":"isapproved"
+    }]
+  }
+  
+  ```
+}

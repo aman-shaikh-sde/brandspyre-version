@@ -1,0 +1,40 @@
+meta {
+  name: view
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/api/project/task/members/read?overdue=2025-03-20
+  body: none
+  auth: bearer
+}
+
+params:query {
+  overdue: 2025-03-20
+  ~start_date: 2025-02-12
+  ~end_date: 2025-02-13
+  ~participants_id: 1
+  ~branchcode: 
+  ~campaign_code: 
+  ~client_code: 
+  ~page: 1
+  ~search: 
+  ~dec: 
+  ~limit: 2
+  ~priority: 
+  ~status: 
+  ~status: 
+  ~project_code: 
+  ~milestone_code: 
+  ~task_id: 
+  ~team_id: 
+  ~lead_id: 
+  ~staff_id: 
+  ~delay_by: 
+  ~subtask_priority: 
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTkwMzEzNiwiZXhwIjoxNzUxOTg5NTM2fQ.-Z-D98JSNLyf9E35Xom4342dh19iMjUw4b_-KOZxGoQ
+}

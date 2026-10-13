@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- tes -->
+<head>
+    <meta charset="UTF-8">
+    <title>Client Summary Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            padding: 30px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 40px;
+            color: #333;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            margin-bottom: 40px;
+        }
+
+        table {
+            width: 100%;
+            min-width: 1000px;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        th {
+            background: linear-gradient(to right, #eb7070, #eb9494);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background: linear-gradient(to right, #f3d8d8, #f1e3e3);
+        }
+
+        button {
+            padding: 6px 12px;
+            background: linear-gradient(to right, #f3d8d8, #f1e3e3);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #eb7070, #f05151);
+        }
+
+        .tab-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tab-buttons button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #ddd;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.2s;
+        }
+
+        .tab-buttons button.active {
+            background: linear-gradient(to right, #eb7070, #f05151);
+            color: white;
+        }
+
+        .client-summary {
+            display: none;
+        }
+
+        .client-summary.active {
+            display: block;
+        }
+
+        .chart-title {
+            margin: 20px 0 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #131313;
+            text-align: center;
+        }
+
+        canvas {
+            max-width: 100%;
+            height:50%;
+            width:50%;
+        }
+
+        #view-more-section {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Branch Summary</h2>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Branch</th>
+                    <th>Total Clients</th>
+                    <th>Total Projects</th>
+                    <th>Total Milestones</th>
+                    <th>Total Tasks</th>
+                </tr>
+            </thead>
+            <tbody id="summary-body"></tbody>
+            <tfoot id="summary-footer"></tfoot>
+        </table>
+    </div>
+
+    <h2>Client Project Summary</h2>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Client</th>
+                    <th>Branch</th>
+                    <th>Email</th>
+                    <th>Projects</th>
+                    <th>Milestones</th>
+                    <th>Tasks</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="short-detail-body"></tbody>
+        </table>
+    </div>
+
+    <div id="view-more-section">
+        <h2 id="selected-client-name"></h2>
+
+        <div class="tab-buttons">
+            <button data-section="project" class="active">Project</button>
+            <button data-section="milestone">Milestone</button>
+            <button data-section="task">Task</button>
+        </div>
+
+        <div id="client-tabs-charts"></div>
+    </div>
+
+    <script>
+        const clients = [{
+                "client_code": "BRCH_01/CLNT/02",
+                "client_name": "Mukesh",
+                "branchcode": "BRCH_01",
+                "company_name": "MGM",
+                "email": "mukesh@gmail.com",
+                "comm_type": "email",
+                "created_on": "2025-06-23T10:58:25.660Z",
+                "total_projects": "0",
+                "minor_priority_projects": "0",
+                "major_priority_projects": "0",
+                "critical_priority_projects": "0",
+                "blocker_priority_projects": "0",
+                "draft_projects": "0",
+                "planning_projects": "0",
+                "inprocess_projects": "0",
+                "active_projects": "0",
+                "lead_review_projects": "0",
+                "completed_projects": "0",
+                "revised_projects": "0",
+                "client_review_projects": "0",
+                "drop_projects": "0",
+                "total_milestones": "0",
+                "draft_milestones": "0",
+                "inprocess_milestones": "0",
+                "archived_milestones": "0",
+                "drop_milestones": "0",
+                "verified_milestones": "0",
+                "total_tasks": "0",
+                "minor_priority_task": "0",
+                "major_priority_task": "0",
+                "critical_priority_task": "0",
+                "blocker_priority_task": "0",
+                "inprocess_tasks": "0",
+                "archived_tasks": "0",
+                "verified_closed_tasks": "0"
+            },
+                {
+                    "client_code": "BRCH_01/CLNT/03",
+                    "client_name": "Monisha",
+                    "branchcode": "BRCH_01",
+                    "company_name": "MGM",
+                    "email": "moni@gmail.com",
+                    "comm_type": "email",
+                    "created_on": "2025-06-23T10:59:25.855Z",
+                    "total_projects": "0",
+                    "minor_priority_projects": "0",
+                    "major_priority_projects": "0",
+                    "critical_priority_projects": "0",
+                    "blocker_priority_projects": "0",
+                    "draft_projects": "0",
+                    "planning_projects": "0",
+                    "inprocess_projects": "0",
+                    "active_projects": "0",
+                    "lead_review_projects": "0",
+                    "completed_projects": "0",
+                    "revised_projects": "0",
+                    "client_review_projects": "0",
+                    "drop_projects": "0",
+                    "total_milestones": "0",
+                    "draft_milestones": "0",
+                    "inprocess_milestones": "0",
+                    "archived_milestones": "0",
+                    "drop_milestones": "0",
+                    "verified_milestones": "0",
+                    "total_tasks": "0",
+                    "minor_priority_task": "0",
+                    "major_priority_task": "0",
+                    "critical_priority_task": "0",
+                    "blocker_priority_task": "0",
+                    "inprocess_tasks": "0",
+                    "archived_tasks": "0",
+                    "verified_closed_tasks": "0"
+                },
+                {
+                    "client_code": "BRCH_01/CLNT/01",
+                    "client_name": "GOKUL",
+                    "branchcode": "BRCH_01",
+                    "company_name": "MGM",
+                    "email": "gokul@gmail.com",
+                    "comm_type": "email",
+                    "created_on": "2025-06-23T10:57:50.840Z",
+                    "total_projects": "5",
+                    "minor_priority_projects": "5",
+                    "major_priority_projects": "0",
+                    "critical_priority_projects": "0",
+                    "blocker_priority_projects": "0",
+                    "draft_projects": "5",
+                    "planning_projects": "0",
+                    "inprocess_projects": "0",
+                    "active_projects": "0",
+                    "lead_review_projects": "0",
+                    "completed_projects": "0",
+                    "revised_projects": "0",
+                    "client_review_projects": "0",
+                    "drop_projects": "0",
+                    "total_milestones": "2",
+                    "draft_milestones": "1",
+                    "inprocess_milestones": "1",
+                    "archived_milestones": "0",
+                    "drop_milestones": "0",
+                    "verified_milestones": "0",
+                    "total_tasks": "6",
+                    "minor_priority_task": "6",
+                    "major_priority_task": "0",
+                    "critical_priority_task": "0",
+                    "blocker_priority_task": "0",
+                    "inprocess_tasks": "1",
+                    "archived_tasks": "0",
+                    "verified_closed_tasks": "0"
+                }, {
+                "client_code": "BRCH_01/CLNT/02",
+                "client_name": "Mukesh",
+                "branchcode": "BRCH_01",
+                "company_name": "MGM",
+                "email": "mukesh@gmail.com",
+                "comm_type": "email",
+                "created_on": "2025-06-23T10:58:25.660Z",
+                "total_projects": "0",
+                "minor_priority_projects": "0",
+                "major_priority_projects": "0",
+                "critical_priority_projects": "0",
+                "blocker_priority_projects": "0",
+                "draft_projects": "0",
+                "planning_projects": "0",
+                "inprocess_projects": "0",
+                "active_projects": "0",
+                "lead_review_projects": "0",
+                "completed_projects": "0",
+                "revised_projects": "0",
+                "client_review_projects": "0",
+                "drop_projects": "0",
+                "total_milestones": "0",
+                "draft_milestones": "0",
+                "inprocess_milestones": "0",
+                "archived_milestones": "0",
+                "drop_milestones": "0",
+                "verified_milestones": "0",
+                "total_tasks": "0",
+                "minor_priority_task": "0",
+                "major_priority_task": "0",
+                "critical_priority_task": "0",
+                "blocker_priority_task": "0",
+                "inprocess_tasks": "0",
+                "archived_tasks": "0",
+                "verified_closed_tasks": "0"
+            },
+            {
+                "client_code": "BRCH_01/CLNT/03",
+                "client_name": "Monisha",
+                "branchcode": "BRCH_04",
+                "company_name": "MGM",
+                "email": "moni@gmail.com",
+                "comm_type": "email",
+                "created_on": "2025-06-23T10:59:25.855Z",
+                "total_projects": "0",
+                "minor_priority_projects": "0",
+                "major_priority_projects": "0",
+                "critical_priority_projects": "0",
+                "blocker_priority_projects": "0",
+                "draft_projects": "0",
+                "planning_projects": "0",
+                "inprocess_projects": "0",
+                "active_projects": "0",
+                "lead_review_projects": "0",
+                "completed_projects": "0",
+                "revised_projects": "0",
+                "client_review_projects": "0",
+                "drop_projects": "0",
+                "total_milestones": "0",
+                "draft_milestones": "0",
+                "inprocess_milestones": "0",
+                "archived_milestones": "0",
+                "drop_milestones": "0",
+                "verified_milestones": "0",
+                "total_tasks": "0",
+                "minor_priority_task": "0",
+                "major_priority_task": "0",
+                "critical_priority_task": "0",
+                "blocker_priority_task": "0",
+                "inprocess_tasks": "0",
+                "archived_tasks": "0",
+                "verified_closed_tasks": "0"
+            },
+            {
+                "client_code": "BRCH_01/CLNT/01",
+                "client_name": "GOKUL",
+                "branchcode": "BRCH_03",
+                "company_name": "MGM",
+                "email": "gokul@gmail.com",
+                "comm_type": "email",
+                "created_on": "2025-06-23T10:57:50.840Z",
+                "total_projects": "5",
+                "minor_priority_projects": "5",
+                "major_priority_projects": "0",
+                "critical_priority_projects": "0",
+                "blocker_priority_projects": "0",
+                "draft_projects": "5",
+                "planning_projects": "0",
+                "inprocess_projects": "0",
+                "active_projects": "0",
+                "lead_review_projects": "0",
+                "completed_projects": "0",
+                "revised_projects": "0",
+                "client_review_projects": "0",
+                "drop_projects": "0",
+                "total_milestones": "2",
+                "draft_milestones": "1",
+                "inprocess_milestones": "1",
+                "archived_milestones": "0",
+                "drop_milestones": "0",
+                "verified_milestones": "0",
+                "total_tasks": "6",
+                "minor_priority_task": "6",
+                "major_priority_task": "0",
+                "critical_priority_task": "0",
+                "blocker_priority_task": "0",
+                "inprocess_tasks": "1",
+                "archived_tasks": "0",
+                "verified_closed_tasks": "0"
+            }] // your existing client array
+
+        const shortBody = document.getElementById('short-detail-body');
+        clients.forEach((client, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+        <td>${client.client_name}</td>
+        <td>${client.branchcode}</td>
+        <td>${client.email}</td>
+        <td>${client.total_projects}</td>
+        <td>${client.total_milestones}</td>
+        <td>${client.total_tasks}</td>
+        <td><button onclick="showGraph(${index})">View More</button></td>
+      `;
+            shortBody.appendChild(row);
+        });
+
+        // Branch summary
+        const branchMap = {};
+        clients.forEach(client => {
+            const branch = client.branchcode;
+            if (!branchMap[branch]) {
+                branchMap[branch] = { total_clients: 0, total_projects: 0, total_milestones: 0, total_tasks: 0 };
+            }
+            branchMap[branch].total_clients++;
+            branchMap[branch].total_projects += Number(client.total_projects || 0);
+            branchMap[branch].total_milestones += Number(client.total_milestones || 0);
+            branchMap[branch].total_tasks += Number(client.total_tasks || 0);
+        });
+
+        const summaryBody = document.getElementById("summary-body");
+        const summaryFooter = document.getElementById("summary-footer");
+
+        let grandClients = 0, grandProjects = 0, grandMilestones = 0, grandTasks = 0;
+        Object.entries(branchMap).forEach(([branch, stats]) => {
+            summaryBody.innerHTML += `
+              <tr>
+                <td>${branch}</td>
+                <td>${stats.total_clients}</td>
+                <td>${stats.total_projects}</td>
+                <td>${stats.total_milestones}</td>
+                <td>${stats.total_tasks}</td>
+              </tr>`;
+            grandClients += stats.total_clients;
+            grandProjects += stats.total_projects;
+            grandMilestones += stats.total_milestones;
+            grandTasks += stats.total_tasks;
+        });
+
+        summaryFooter.innerHTML = `
+          <tr style="font-weight:bold; background:#e9ecef;">
+            <td>Total</td>
+            <td>${grandClients}</td>
+            <td>${grandProjects}</td>
+            <td>${grandMilestones}</td>
+            <td>${grandTasks}</td>
+          </tr>`;
+
+          function showGraph(index) {
+                const client = clients[index];
+                const container = document.getElementById("view-more-section");
+                const chartsDiv = document.getElementById("client-tabs-charts");
+                const nameHeader = document.getElementById("selected-client-name");
+
+                nameHeader.textContent = `Client: ${client.client_name} (${client.client_code})`;
+                chartsDiv.innerHTML = "";
+                container.style.display = "block";
+                window.scrollTo({ top: container.offsetTop - 40, behavior: "smooth" });
+
+                const sections = ['project', 'milestone', 'task'];
+
+                sections.forEach(section => {
+                  const sectionId = `${section}-${index}`;
+                  const wrapper = document.createElement('div');
+                  wrapper.className = `client-summary ${section}`;
+                  if (section === 'project') wrapper.classList.add('active');
+                  wrapper.id = sectionId;
+
+                  const title = document.createElement("div");
+                  title.className = "chart-title";
+                  title.textContent = `${section.toUpperCase()} Summary`;
+
+                  const canvas = document.createElement("canvas");
+                  canvas.id = `canvas-${sectionId}`;
+                  canvas.height = 300;
+
+                  const scrollWrapper = document.createElement("div");
+                  scrollWrapper.style.overflowX = "auto";
+                  scrollWrapper.appendChild(canvas);
+
+                  wrapper.appendChild(title);
+                  wrapper.appendChild(scrollWrapper);
+                  chartsDiv.appendChild(wrapper);
+
+                  let labels = [], datasetLabels = [], datasetData = [], colors = [];
+
+                  if (section === 'project') {
+                      datasetLabels = ['Minor', 'Major', 'Critical', 'Blocker', 'Draft', 'Planning', 'Inprocess', 'Active', 'Lead Review', 'Completed', 'Revised', 'Client Review', 'Dropped'];
+                      datasetData = [
+                          client.minor_priority_projects, client.major_priority_projects, client.critical_priority_projects,
+                          client.blocker_priority_projects, client.draft_projects, client.planning_projects, client.inprocess_projects,
+                          client.active_projects, client.lead_review_projects, client.completed_projects,
+                          client.revised_projects, client.client_review_projects, client.drop_projects
+                      ].map(Number);
+                      colors = ['#6f42c1', '#0d6efd', '#dc3545', '#000000', '#adb5bd', '#17a2b8', '#ffc107', '#28a745', '#20c997', '#6610f2', '#e83e8c', '#fd7e14', '#6c757d'];
+                      labels = ['Projects'];
+                  } else if (section === 'milestone') {
+                      datasetLabels = ['Draft', 'Inprocess', 'Archived', 'Drop', 'Verified'];
+                      datasetData = [
+                          client.draft_milestones, client.inprocess_milestones, client.archived_milestones,
+                          client.drop_milestones, client.verified_milestones
+                      ].map(Number);
+                      colors = ['#0dcaf0', '#ffc107', '#adb5bd', '#dc3545', '#198754'];
+                      labels = ['Milestones'];
+                  } else {
+                      datasetLabels = ['Minor', 'Major', 'Critical', 'Blocker', 'Inprocess', 'Archived', 'Verified-Closed'];
+                      datasetData = [
+                          client.minor_priority_task, client.major_priority_task, client.critical_priority_task,
+                          client.blocker_priority_task, client.inprocess_tasks, client.archived_tasks, client.verified_closed_tasks
+                      ].map(Number);
+                      colors = ['#6f42c1', '#fd7e14', '#dc3545', '#000000', '#0d6efd', '#adb5bd', '#198754'];
+                      labels = ['Tasks'];
+                  }
+
+                  const stackedData = {
+                      labels,
+                      datasets: datasetLabels.map((label, i) => ({
+                          label,
+                          data: [datasetData[i]],
+                          backgroundColor: colors[i],
+                          barThickness: 60,
+                      }))
+                  };
+
+                  const ctx = canvas.getContext('2d');
+                  new Chart(ctx, {
+                      type: 'bar',
+                      data: stackedData,
+                      options: {
+                          responsive: true,
+                          plugins: {
+                              tooltip: {
+                                  callbacks: {
+                                      label: ctx => `${ctx.dataset.label}: ${ctx.raw}`
+                                  }
+                              }
+                          },
+                          scales: {
+                              x: {
+                                  stacked: true,
+                                  ticks: { color: '#333' }
+                              },
+                              y: {
+                                  stacked: true,
+                                  beginAtZero: true,
+                                  grid: { color: '#eee' }
+                              }
+                          }
+                      }
+                  });
+              });
+            }
+
+            document.addEventListener('click', function (e) {
+                if (e.target.matches('.tab-buttons button')) {
+                    const selected = e.target.dataset.section;
+                    document.querySelectorAll('.tab-buttons button').forEach(b => b.classList.remove('active'));
+                    e.target.classList.add('active');
+                    ['project', 'milestone', 'task'].forEach(section => {
+                        document.querySelectorAll(`.client-summary.${section}`).forEach(el => {
+                            el.style.display = (section === selected) ? 'block' : 'none';
+                        });
+                    });
+                }
+            });
+    </script>
+</body>
+
+</html>

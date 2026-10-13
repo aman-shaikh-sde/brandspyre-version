@@ -1,0 +1,38 @@
+meta {
+  name: edit
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{local}}/api/master/software/edit/1
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTQ1ODEwMCwiZXhwIjoxNzQ5NTQ0NTAwfQ.tG-riThJanMRF_OQNihszlbGd93VuLhl6-s8iGSXYK4
+}
+
+body:json {
+  {
+    "userData":{
+      "name":"3DS-MAX",
+      "branchcode":"BRCH_01"
+    }
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "userData":{
+      "name":"3DS MAX",
+      "branchcode":""
+    }
+  }
+  
+  
+  ```
+}

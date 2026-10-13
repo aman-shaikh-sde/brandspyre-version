@@ -1,0 +1,39 @@
+meta {
+  name: delete
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{local}}/api/doc_meet/delete/1
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTI3MzE5MywiZXhwIjoxNzUxMzU5NTkzfQ.VQvR2rVHCD-bQE2wNgKVSt8-ygJaMq9VS_9bhO9rUqI
+}
+
+body:json {
+  
+  {
+    "data": {
+      "delete_type":"permanent"
+    }
+  }
+}
+
+docs {
+  ```javascript
+  
+  #remove Meeting
+  
+  {
+    "data": {
+      "delete_type":"permanent"
+    }
+  }
+  
+  
+  ```
+}

@@ -1,0 +1,44 @@
+meta {
+  name: edit
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{local}}/api/campaign/followup/edit/1
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTczMDE2OSwiZXhwIjoxNzQ5ODE2NTY5fQ.gtQIAPNFAfEgm-S5B9zxW862ixL7YN8dU6t6H3gFMtI
+}
+
+body:json {
+  {
+    "data": {
+      "branchcode": "BRCODE_01",
+      "campaign_code": "BRCODE_01/CAMP/01",
+      "lead_id":1,
+      "next_date": "2025-06-26",
+      "status": "active"
+    }
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "data": {
+      "branchcode": "BRCODE_01",
+      "campaign_code": "BRCODE_01/CAMP/01",
+      "lead_id":1,
+      "next_date": "2025-06-26",
+      "status": "active"
+    }
+  }
+  
+  ```
+  
+}

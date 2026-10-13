@@ -1,0 +1,24 @@
+meta {
+  name: view
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/api/users/education/read
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~staff_id: ASC/0
+  ~search: 2018
+  ~rowId: 
+  ~page: 1
+  ~dec: dec
+  ~limit: 2
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJBU0MvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTExNjIwNiwiZXhwIjoxNzQ5MjAyNjA2fQ.P4xiscjAEms0wKS2IU3KHnvKLTHffNpk9V_UHpamqUw
+}

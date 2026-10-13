@@ -1,0 +1,53 @@
+meta {
+  name: edit
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{local}}/api/project/pay/edit
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTYzNTA3NywiZXhwIjoxNzQ5NzIxNDc3fQ.egiclfQdC-2uNdNoq_5h5WZ0qtDYHxc1REIgeKq7wwo
+}
+
+body:json {
+  
+  {
+    "data": {
+      "branchcode": "BRCODE_01",
+      "campaign_code":"BRCODE_01/CAMP/01",
+      "campaignname":"Summer Designss",
+      "campaigntype":"interiors",
+      "startdate": "2025-06-02",
+      "enddate": "2025-07-01",
+      "goallead":100,
+      "status": "active",
+      "summary": ""
+    }
+  }
+}
+
+docs {
+  ```javascript
+  
+  
+  {
+    "data": {
+      "branchcode": "BRCODE_01",
+      "campaign_code":"BRCODE_01/CAMP/01",
+      "campaignname":"Summer Designss",
+      "campaigntype":"interiors",
+      "startdate": "2025-06-02",
+      "enddate": "2025-07-01",
+      "goallead":100,
+      "status": "active",
+      "summary": ""
+    }
+  }
+  
+  ```
+}

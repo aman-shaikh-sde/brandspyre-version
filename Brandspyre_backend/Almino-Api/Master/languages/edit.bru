@@ -1,0 +1,38 @@
+meta {
+  name: edit
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{local}}/api/master/language/edit/1
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTQ1Njg5OCwiZXhwIjoxNzQ5NTQzMjk4fQ.rfqcVw16TsnomN8nmbO7IYqTek6-u18E0gYYJoyVVFg
+}
+
+body:json {
+  {
+    "userData":{
+      "name":"Hindi",
+      "branchcode":"BRCH_01"
+    }
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "userData":{
+      "name":"Hind",
+      "branchcode":""
+    }
+  }
+  
+  
+  ```
+}

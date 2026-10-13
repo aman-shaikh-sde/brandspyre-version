@@ -1,0 +1,23 @@
+meta {
+  name: view
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/api/campaign/followup/read
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~page: 1
+  ~search: 
+  ~dec: 
+  ~limit: 2
+  ~manager_id: 
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTk3NTAxMywiZXhwIjoxNzUyMDYxNDEzfQ.hkVfywqMRJhuGn2W5ekHhzRqV9aYgCRq5HGkOHueNuc
+}

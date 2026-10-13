@@ -1,0 +1,21 @@
+meta {
+  name: usersSummary
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{local}}/api/report/usersummary/read?staff_id=BRCODE_01/01&start_date=2025-01-01&end_date=2025-12-31
+  body: none
+  auth: bearer
+}
+
+params:query {
+  staff_id: BRCODE_01/01
+  start_date: 2025-01-01
+  end_date: 2025-12-31
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MjA2MDI3MCwiZXhwIjoxNzUyMTQ2NjcwfQ.GLneQOMlbIJ58PfRIIo6Cbq_dJnLl6QtpRXG-QQ7OFI
+}

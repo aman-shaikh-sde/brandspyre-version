@@ -1,0 +1,21 @@
+meta {
+  name: view
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/api/master/language/read
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~page: 1
+  ~dec: dec
+  ~limit: 2
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTQ1Njg5OCwiZXhwIjoxNzQ5NTQzMjk4fQ.rfqcVw16TsnomN8nmbO7IYqTek6-u18E0gYYJoyVVFg
+}

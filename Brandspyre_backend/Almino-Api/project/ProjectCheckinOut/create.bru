@@ -1,0 +1,59 @@
+meta {
+  name: create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{local}}/api/project/task/checkinout/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTk2MTEwNiwiZXhwIjoxNzUyMDQ3NTA2fQ.SoRdttqgO6UWBYkQavYyturX9BJtBRT9FCkOHoAvSX0
+}
+
+body:json {
+  {
+    "data": {
+      "participants_id": 8,
+      "status": "archived",
+      "delay_by": "member",
+      "delay_reason": "Network issues"
+    }
+  }
+}
+
+docs {
+  ```javascript
+  #Check-IN / Check-OUT
+  {
+    "data": {
+      "participants_id": 101
+    }
+  }
+  
+  Complete work on time (Check-out + Archive)
+  {
+    "data": {
+      "participants_id": 101,
+      "status": "archived"
+    }
+  }
+  
+  Complete work late (Check-out + Delay + Archive)
+  {
+    "data": {
+      "participants_id": 101,
+      "status": "archived",
+      "delay_by": "member", "client"
+      "delay_reason": "Network issues"
+    }
+  }
+  
+  task_priority: 'minor', 'major', 'critical', 'blocker'
+  status: 'draft', 'active', 'paused', 'completed', 'archived', 'drop'
+  
+  ```
+}

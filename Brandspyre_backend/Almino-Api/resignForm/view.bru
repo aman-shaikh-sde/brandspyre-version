@@ -1,0 +1,31 @@
+meta {
+  name: view
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{local}}/api/user_resign_form/read
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~resign_id: RSN__3
+  ~termination_type: 
+  ~department: 
+  ~team_id: 
+  ~from_date: 
+  ~to_date: 
+  ~order_by: created_at
+  ~branchcode: BRCH_02
+  ~status: active
+  ~page: 1
+  ~search: 
+  ~dec: 
+  ~limit: 2
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MjA0MDUzMSwiZXhwIjoxNzUyMTI2OTMxfQ.EEiG__lRmXUoBejwtMEOtFR_SdR1aNi0RLlmhX8uIFY
+}

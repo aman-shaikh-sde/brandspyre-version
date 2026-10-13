@@ -1,0 +1,26 @@
+meta {
+  name: dropDownBranch
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{local}}/api/branch/dropdown?branchcode=BRCODE_01
+  body: none
+  auth: bearer
+}
+
+params:query {
+  branchcode: BRCODE_01
+  ~branchid: 1
+  ~status: active
+  ~status: inactive
+  ~page: 1
+  ~search: 
+  ~dec: 
+  ~limit: 2
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MDM5NzU5MywiZXhwIjoxNzUwNDgzOTkzfQ.WEl1wtDJoBwM0JVL6DFM9R4LGKnddnkZ0C85owgpJ3U
+}

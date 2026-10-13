@@ -1,0 +1,25 @@
+meta {
+  name: dropdowm
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{local}}/api/campaign/leads/dropdown
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~campaign_code: 
+  ~branchcode: 
+  ~page: 1
+  ~search: 
+  ~dec: 
+  ~limit: 2
+  ~lead_id: 
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MDQyNTQ2NiwiZXhwIjoxNzUwNTExODY2fQ.BDNUhuyFwVcQQezOnbZsdm4FZ-A4DUCnwyLk720JsaY
+}

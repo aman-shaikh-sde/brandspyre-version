@@ -1,0 +1,45 @@
+meta {
+  name: edit
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{local}}/api/teams/edit
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MDUwOTcyMywiZXhwIjoxNzUwNTk2MTIzfQ.dO6nirC57sCKnrmzR1J0CQXGSKVqjK8pjrAAA8JsYNc
+}
+
+body:json {
+  {
+    "userData":
+    {
+      "team_id":"BRCH_01/TEAM/02",
+      "team_name":"consulting",
+      "team_lead":"BRCH_01/01",
+      "branchcode":"BRCH_01",
+      "is_active":true
+    }
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "userData":
+    {
+      "team_id":"BRCODE_01/TEAM/01",
+      "team_name":"Productions",
+      "team_lead":"BRCODE_01/01",
+      "branchcode":"BRCODE_01",
+      "is_active":true
+    }
+  }
+  
+  ```
+}

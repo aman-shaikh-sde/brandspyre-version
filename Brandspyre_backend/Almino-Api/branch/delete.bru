@@ -1,0 +1,35 @@
+meta {
+  name: delete
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{local}}/api/branch/delete/1
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJzdXBlcmFkbWluIiwiYnJjb2RlIjoiQlJDT0RFXzAxIiwiaWF0IjoxNzQ3OTE1ODQ0LCJleHAiOjE3NDgwMDIyNDR9.Lmx7JrxuL6-LtXzOLHGjaJb6ZPzAPoqcLtbF4oTbYOM
+}
+
+body:json {
+  {
+    "status":"inactive"
+  }
+}
+
+docs {
+  {
+    "notes":"",
+    "status":"active",
+    "closeReason":"",
+  }
+  
+  {
+    "notes":"",
+    "status":"inactive",
+    "closeReason":"",
+  }
+}

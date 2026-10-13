@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test API File Upload</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        textarea,
+        input[type="file"] {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        #response {
+            white-space: pre-wrap;
+            margin-top: 20px;
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>📤 Test Create Meeting/Doc API</h2>
+
+    <form id="uploadForm">
+        <label for="data">📝 JSON Data (as string):</label><br />
+        <textarea id="data" rows="10"
+            placeholder=''></textarea><br />
+
+        <label for="files">📁 Select Files:</label><br />
+        <input type="file" id="URL" name="URL" multiple /><br />
+
+        <button type="submit">📨 Send</button>
+    </form>
+
+    <div id="response"></div>
+
+    <script>
+        document.getElementById("uploadForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const form = new FormData();
+            const data = document.getElementById("data").value;
+            const files = document.getElementById("URL").files;
+
+            form.append("data", data);
+            console.log("data",data)
+
+            for (let i = 0; i < files.length; i++) {
+                form.append("URL", files[i]); // same name key for multiple files
+            }
+
+            try {
+                let token =
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTU1MTc4MCwiZXhwIjoxNzUxNjM4MTgwfQ.oP94wyyuYVtPTlrm9zJjBXsefMzawihdSAYDGh_TAs8"
+
+                const res = await fetch("http://localhost:3000/api/doc_meet/create", {
+                    method: "POST",
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                    body: form,
+                });
+
+                const result = await res.json();
+
+                if (res.ok) {
+                    document.getElementById("response").innerHTML =
+                        `<span style="color: green;">✅ Upload Success:</span><br><pre>${JSON.stringify(result, null, 2)}</pre>`;
+                        alert("successfully created");
+                } else {
+                    alert("❌ Upload Failed:\n" + (result?.error || "Unknown error"));
+                    document.getElementById("response").innerHTML =
+                        `<span style="color: red;">❌ Upload Failed:</span><br><pre>${JSON.stringify(result, null, 2)}</pre>`;
+                }
+            } catch (err) {
+                alert("❌ Network Error:\n" + err.message);
+                document.getElementById("response").innerHTML =
+                    `<span style="color: red;">❌ Error:</span> ${err.message}`;
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+meta {
+  name: create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{local}}/api/users/leavereq/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTY5NjQ0NywiZXhwIjoxNzUxNzgyODQ3fQ.nI4dkf_reHHzsqcjqVgyqchVytmwRjdxsXkwOYKBFP0
+}
+
+body:json {
+  {
+    "staff_id": "BRCODE_01/01", 
+    "branchcode": "BRCODE_01",         
+    "leave_type": "casual",       
+    "start_date": "2025-07-14",     
+    "end_date": "2025-07-14",       
+    "reason": "Attending family event"
+  }
+}
+
+docs {
+  ```javascript
+  
+   Hourly Leave Request
+  {
+    "staff_id": "BRCH_01/01",
+    "branchcode": "BRCH_01",
+    "leave_type": "casual",
+    "start_date": "2025-07-05",
+    "end_date": "2025-07-05",
+    "reason": "Personal",
+    "is_half_day": true,
+    "partial_day_type": "hourly",
+    "leave_duration_hours": 2.5
+  }
+  
+  Half-Day Leave Request
+  {
+    "staff_id": "BRCH_01/02",
+    "branchcode": "BRCH_01",
+    "leave_type": "sick",
+    "start_date": "2025-07-06",
+    "end_date": "2025-07-06",
+    "reason": "Fever",
+    "is_half_day": true,
+    "partial_day_type": "morning"
+  }
+  Full-Day Leave Request
+  {
+    "staff_id": "BR01/01",            // optional if logged-in user is requesting for themselves
+    "branchcode": "BR01",             // required
+    "leave_type": "casual",           // required: must be 'sick', 'casual', or 'earned'
+    "start_date": "2025-07-10",       // required: must be in 'YYYY-MM-DD' format
+    "end_date": "2025-07-13",         // required
+    "reason": "Attending family event" // optional (but recommended)
+  }
+  
+  ```
+}

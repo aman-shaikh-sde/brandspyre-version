@@ -1,0 +1,62 @@
+meta {
+  name: edit
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{local}}/api/project/overview/edit
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MDY3Njc1NCwiZXhwIjoxNzUwNzYzMTU0fQ.PPpITPn5n_eU0qzDKoXlrgzO93pehT-sq4qwhc8NuDg
+}
+
+body:json {
+  {
+    "data":{
+      "branchcode": "BRCODE_01",
+      "project_code":"BRCH_01 - 250623",
+      "title":"BUILDING",
+      "priority": "minor",
+      "type":"residintial",
+      "loc": "35, North Masi",
+      "budget": 2500.00,
+      "overallcost":0.00,
+      "start_date":"2025-02-02",
+      "end_date":"2025-03-02",
+      "handler_by":"BRCH_01/02",
+      "notes":"Project description",
+      "status":"draft"
+    }
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "data":{
+      "branchcode": "BRCODE_01",
+      "project_code":"BRCODE_01/CLNT/01/PROJ/01",
+      "title":"MGMF",
+      "priority": "minor",
+      "type":"residintial",
+      "loc": "35, North Masi",
+      "budget": 100000.00,
+      "overallcost":0.00,
+      "start_date":"2025-02-02",
+      "end_date":"2025-03-02",
+      "handler_by":"BRCH_01/02",
+      "notes":"Project description",
+      "status":"draft"
+    }
+  }
+  
+  priority : 'minor', 'major', 'critical', 'blocker'
+  status: 'draft', 'planning', 'active', 'paused', 'completed', 'revised','client_review', 'drop'
+  
+  ```
+}

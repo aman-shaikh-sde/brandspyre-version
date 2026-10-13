@@ -1,0 +1,49 @@
+meta {
+  name: create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{local}}/api/branch/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MDUwODMzMSwiZXhwIjoxNzUwNTk0NzMxfQ.EJjsTXXDCbl1Ohln5h6zMCkB2lOI9AQkuv9Az873g4g
+}
+
+body:json {
+  {
+          "branch_hours":"9-HRS",
+          "branchcode":"BRCH_01",
+          "role":"employee",
+          "name":"Branch_01/MD",
+          "location":"Madurai NorthZone",
+          "mobile":"87608107567",
+          "email":"schaingokul@gmial.com",
+          "manager_id":"BRCH_01",
+          "managername":"Manager",
+          "notes":"",
+          "status":"active",
+          "closeReason":""
+  }
+}
+
+docs {
+  {
+          "branch_hours": "9-HRS",
+          "branchcode":"BRCH_02",
+          "role":"Admin",
+          "name":"Branch2",
+          "location":"MaduraiNorth",
+          "mobile":"87608107567",
+          "email":"schaingokul@gmial.com",
+          "manager_id":"BRCH_02_MNG",
+          "managername":"Manager",
+          "notes":"",
+          "status":"",
+          "closeReason":""
+  }
+}

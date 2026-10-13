@@ -1,0 +1,25 @@
+meta {
+  name: branchSummary
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{local}}/api/report/branchsummary/read
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~client_code: BRCH_01/CLNT/01
+  ~sortDirection: DESC
+  ~sortField: draft_projects
+  ~branchcode: BRCH_01
+  ~start_date: 2025-06-23
+  ~end_date: 2026-06-24
+  ~sortDirection: ASC
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MjA0OTI2OSwiZXhwIjoxNzUyMTM1NjY5fQ.BVCaPAD9BOfz67Ba9Jji2hg_6d1_3YRhx2CBd4LWc8c
+}

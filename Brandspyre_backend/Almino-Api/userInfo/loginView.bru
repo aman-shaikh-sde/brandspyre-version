@@ -1,0 +1,31 @@
+meta {
+  name: loginView
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{local}}/api/users/login/read
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MDE0MzA0MywiZXhwIjoxNzUwMjI5NDQzfQ.F1sM79R9UNQVphkZp5Gi35UMdNxj8hasCnSQhe_EqMc
+}
+
+body:json {
+  {
+    "email":"email@gmail.com",
+    "password":"12341234",
+    "ip":"192.1.1.5.03",
+    "device":"Desktop"
+  }
+}
+
+docs {
+  {
+    "email":"email@gmail.com",
+    "password":"12341234"
+  }
+}

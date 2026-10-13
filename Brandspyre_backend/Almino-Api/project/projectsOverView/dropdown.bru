@@ -1,0 +1,29 @@
+meta {
+  name: dropdown
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{local}}/api/project/overview/dropdown
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~project_code: BRCH_02
+  ~branchcode: 
+  ~campaign_code: 
+  ~client_code: 
+  ~page: 1
+  ~search: 
+  ~dec: 
+  ~limit: 2
+  ~priority: 
+  ~status: 
+  ~status: 
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MDY3NjI1NywiZXhwIjoxNzUwNzYyNjU3fQ.MBm_KjbjYf06-SjhuZwZhK_2Gtgg86T5GFHzF1uVNcg
+}

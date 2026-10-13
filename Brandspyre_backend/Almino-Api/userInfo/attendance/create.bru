@@ -1,0 +1,39 @@
+meta {
+  name: create
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{local}}/api/users/attendance/create
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTc3NTc3NCwiZXhwIjoxNzUxODYyMTc0fQ.O3j-YUi8TL2FsCPlIyRpT5ur0nd_AZtH--sFE_LeYFc
+}
+
+body:json {
+  {
+    "staff_id": "BRCH_01/01",
+    "branchcode": "BRCH_01",
+    "attendance_date": "2025-07-06",
+    "status": "present",
+    "remarks": "Auto-generated attendance"
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "staff_id": "BRCH_01/01",
+    "branchcode": "BRCH_01",
+    "attendance_date": "2025-07-06",
+    "status": "present",
+    "remarks": "Auto-generated attendance"
+  }
+  
+  ```
+}

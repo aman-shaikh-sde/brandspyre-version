@@ -1,0 +1,47 @@
+meta {
+  name: edit
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{local}}/api/users/experience/edit/2
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJBU0MvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc0OTExNjgzNCwiZXhwIjoxNzQ5MjAzMjM0fQ._t80xEZcRXVKTasB9XiyQt6bynhHG_AZsFzvzUpYebU
+}
+
+body:json {
+  {
+    "userData":{
+      "staff_id":"ASC/01",
+      "companyname":"CodeSheldsddls",
+      "designation":"Backend Developer",
+      "lastsalary":"30000",
+      "start_year":"2025-02-02",
+      "end_year":"2025-02-02",
+      "reason":"Career Growth"
+    }
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "userData":{
+      "staff_id":"ASC/01",
+      "companyname":"CodeShells",
+      "designation":"Backend Developer",
+      "lastsalary":"30000",
+      "start_year":"2025-02-02",
+      "end_year":"2025-02-02",
+      "reason":"Career Growth"
+    }
+  }
+  
+  ```
+}

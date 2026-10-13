@@ -1,0 +1,55 @@
+meta {
+  name: edit
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{local}}/api/campaign/leads/edit/1
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MDIzMTY0MiwiZXhwIjoxNzUwMzE4MDQyfQ.gyfoWXs1n3jauIgpICHppYXMMHNmdAPWOjjB0vofeQQ
+}
+
+body:json {
+  
+  {
+    "data": {
+      "branchcode": "BRCODE_01",
+      "campaign_code": "BRCODE_01/CAMP/01",
+      "lead_date":"2025-06-12",
+      "lead_name": "GOKUL",
+      "phone": "8608107567",
+      "email": "gokul@gmail.com",
+      "assignee_id": "BRCODE_01/01",
+      "comm_type": "email",
+      "proj_type": "commercial",
+      "status": "active"
+    }
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "data": {
+      "branchcode": "BRCODE_01",
+      "campaign_code": "BRCODE_01/CAMP/01",
+      "lead_date":"2025-06-11",
+      "lead_name": "GOKUL",
+      "phone": "8608107567",
+      "email": "gokul@gmail.com",
+      "assignee_id": "BRCODE_01/01",
+      "comm_type": "email",
+      "proj_type": "commercial",
+      "status": "active"
+    }
+  }
+  
+  ```
+  
+}

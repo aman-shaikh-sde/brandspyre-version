@@ -1,0 +1,26 @@
+meta {
+  name: dropdownUser
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{local}}/api/users/dropdown
+  body: none
+  auth: bearer
+}
+
+params:query {
+  ~staff_id: BRCH_02/02
+  ~branchcode: BRCH_02
+  ~department: 
+  ~designation: 
+  ~page: 1
+  ~dec: 
+  ~limit: 2
+  ~teamid: 
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTUyNjYzOCwiZXhwIjoxNzUxNjEzMDM4fQ.u3Yqx9IVpozCLUz3G0g9dGmzUeDXg4ZSrBOz4Xb1A-0
+}

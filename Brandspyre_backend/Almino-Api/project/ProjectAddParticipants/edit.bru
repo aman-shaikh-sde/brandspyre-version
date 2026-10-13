@@ -1,0 +1,45 @@
+meta {
+  name: edit
+  type: http
+  seq: 3
+}
+
+put {
+  url: {{local}}/api/project/task/members/edit/8
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJCUkNPREVfMDEvMDEiLCJyb2xlIjoic3VwZXJhZG1pbiIsImJyY29kZSI6IkJSQ09ERV8wMSIsImlhdCI6MTc1MTYyMTQzOCwiZXhwIjoxNzUxNzA3ODM4fQ.12Xfu_EsPFKMbMVhyrQNo8B2zwmUWWiYjYW_KZXwmTc
+}
+
+body:json {
+  {
+    "data": {
+      "status": "rework"
+    }
+  }
+}
+
+docs {
+  ```javascript
+  
+  {
+    "data": {
+      "status": "verified-closed",
+      "rating": 4
+    }
+  }
+  
+  {
+    "data": {
+      "status": "rework"
+    }
+  }
+  
+  task_priority: 'minor', 'major', 'critical', 'blocker'
+  status: 'draft', 'active', 'paused', 'completed', 'archived', 'drop'
+  
+  ```
+}
